@@ -9,7 +9,7 @@
 
 <style>
 table,th,td {
-	border:1px solid black; /*두께,선종류,선색상*/
+	 /*두께,선종류,선색상*/
 	border-collapse:collapse; /* border 붙이기  */
 	
 }
@@ -17,8 +17,9 @@ table,th,td {
 </style>
 
 </head>
-<p>주문자 정보입력</p>
-<table style="width:900px; height: 200px;" >
+
+<p style="font-weight: bold">주문자 정보입력</p>
+<table style="width:900px; height: 200px; border:1px solid black;" >
 	<tr>
 		<th>주문자 정보</th>
 		<td style="width: 85%">비회원으로 상품 구매시 반드시 본인인증을 하셔야 합니다.
@@ -78,11 +79,11 @@ table,th,td {
 
 <br>
 <br>
-<p>배송지 정보 입력</p>
-<table style="width: 900px; height: 400px;">
+<p style="font-weight: bold">배송지 정보 입력</p>
+<table style="width: 900px; height: 400px; border:1px solid black;">
 	<tr>
-		<th>배송지 선택</th>
-		<td style="width: 85%;">
+		<th style="border-bottom:1px black; background-color: #F2F2F2">배송지 선택</th>
+		<td style="width: 85%; border-bottom:1px black; background-color: #F2F2F2">
 			<button>주문자 정보와 동일</button>
 		</td>
 	</tr>
@@ -134,20 +135,20 @@ table,th,td {
 
 <br>
 <br>
-<p>결제 정보 입력</p>
+<p style="font-weight: bold">결제 정보 입력</p>
 
-<table style="width: 700px; height: 300px;">
+<table style="width: 700px; height: 300px; border:1px solid black;">
 	<tr>
-		<th>신용카드</th>
-		<td style="width: 80%">
+		<th style="background-color:#F2F2F2;">신용카드</th>
+		<td style="width: 80%; background-color:#F2F2F2 ">
 			<input type="radio" name="creditCard" value="nomal">신용카드(일반) &nbsp; &nbsp;
 			<input type="radio" name="creditCard" value="raw">신용카드(법인) &nbsp; &nbsp;
 			<input type="radio" name="creditCard" value="overseas">해외발급카드
 		</td>
 	</tr>
 	<tr>
-		<th>현금결제</th>
-		<td>
+		<th style="background-color:#F2F2F2 ">현금결제</th>
+		<td style="background-color:#F2F2F2 ">
 			<input type="radio" name="pay" value="nomal">무통장입금 &nbsp; &nbsp;
 			<input type="radio" name="pay" value="send">실시간계좌이체 &nbsp; &nbsp;
 		</td>
@@ -186,107 +187,6 @@ table,th,td {
 	</tr>				
 
 </table>
-
-<br>
-<br>
-
-<table style="width:900px; height: 50px;">
-	<tr>
-		<th colspan="2" style="width: 25%; height: 5%">정책차림표</th>
-		
-		<th colspan="2" style="width: 25%">미리보는 지원사업</th>
-		
-		<th colspan="2" style="width: 25%">마감임박 지원사업</th>
-		
-		<th style="width: 25%">접수중인 지원사업</th>
-	</tr>
-
-</table>
-
-
-<table style="width:900px; height: 600px;">
-	<tr>
-		<td colspan="7" style="font-size: 30px; text-align: center; color:blue; height: 10%">&#60;2015-06-17&#62;</td>
-		
-	</tr>
-	<tr>
-		<td colspan="7" style="height: 5%">
-			<input type="radio" name="field" value="">전체 &nbsp; &nbsp;
-			<input type="radio" name="field" value="">창업·벤쳐 &nbsp; &nbsp;
-			<input type="radio" name="field" value="">소상공인 &nbsp; &nbsp;
-			<input type="radio" name="field" value="">판로·수출 &nbsp; &nbsp;
-			<input type="radio" name="field" value="">R&D &nbsp; &nbsp;
-			<input type="radio" name="field" value="">금융·세제 &nbsp; &nbsp;
-			<input type="radio" name="field" value="">인력 &nbsp; &nbsp;
-		</td>
-		
-	</tr>
-	<tr>
-		<th style= "height: 5%;">일</th>
-		<th >월</th>
-		<th >화</th>
-		<th >수</th>
-		<th >목</th>
-		<th >금</th>
-		<th >토</th>
-		
-	</tr>
-	<tr>
-		<td style="height: 7%;"></td>
-		<td>1</td>
-		<td>2</td>
-		<td>3</td>
-		<td>4</td>
-		<td>5</td>
-		<td>6</td>
-	</tr>
-	<tr>
-		<td style="height: 7%;">7</td>
-		<td>8</td>
-		<td>9</td>
-		<td>10</td>
-		<td>11</td>
-		<td>12</td>
-		<td>13</td>
-	</tr>
-	<tr>
-		<td style="height: 7%;"></td>
-		<td></td>
-		<td></td>
-		<td></td>
-		<td></td>
-		<td></td>
-		<td></td>
-	</tr>
-	<tr>
-		<td style="height: 7%;"></td>
-		<td></td>
-		<td></td>
-		<td></td>
-		<td></td>
-		<td></td>
-		<td></td>
-	</tr>
-	<tr>
-		<td style="height: 7%;"></td>
-		<td></td>
-		<td></td>
-		<td></td>
-		<td></td>
-		<td></td>
-		<td></td>
-	</tr>
-	<tr>
-		<td colspan="7" style="height: 5%"></td>
-		
-	</tr>
-	
-	
-	
-	
-</table>
-
-
 
 
 

@@ -3,7 +3,196 @@
 <head>
 <meta charset="UTF-8">
 <title>캘린더 폼 작성</title>
+
+<style>
+table,th,td {
+	 /*두께,선종류,선색상*/
+	border-collapse:collapse; /* border 붙이기  */
+
+</style>	
+
 </head>
+
+<table style="width:900px; height: 50px; border:1px solid black;">
+	<tr>
+		<th colspan="2" style="width: 25%; height: 5%; background-color:#BDBDBD ">정책차림표</th>
+		
+		<th colspan="2" style="width: 25%; background-color:#BDBDBD">미리보는 지원사업</th>
+		
+		<th colspan="2" style="width: 25%; background-color:#BDBDBD">마감임박 지원사업</th>
+		
+		<th style="width: 25%; background-color:#58ACFA; color: white;">접수중인 지원사업</th>
+	</tr>
+
+</table>
+
+
+<table style="width:900px; height: 600px; border:1px solid black; ">
+	<tr>
+		<td colspan="7" style="height: 1%; text-align: center;" >
+			<button style="border:0; background-color:white; font-size:25px; color:#BDBDBD; display: inline-block; ">&#60;</button>
+			<p style="display: inline-block; font-size: 25px; color:#58ACFA ">2015-06-17</p>
+			<button style="border:0; background-color:white; font-size:25px; color:#BDBDBD; display: inline-block; ">&#62;</button>
+		</td>
+		
+	</tr>
+	<tr>
+		<td colspan="7" style="height: 5%; border:1px solid black; border:1px solid black;">
+			<input type="radio" name="field" value="" style="color: blue;">전체 &nbsp; &nbsp;
+			<input type="radio" name="field" value="">창업·벤쳐 &nbsp; &nbsp;
+			<input type="radio" name="field" value="">소상공인 &nbsp; &nbsp;
+			<input type="radio" name="field" value="">판로·수출 &nbsp; &nbsp;
+			<input type="radio" name="field" value="">R&D &nbsp; &nbsp;
+			<input type="radio" name="field" value="">금융·세제 &nbsp; &nbsp;
+			<input type="radio" name="field" value="">인력 &nbsp; &nbsp;
+		</td>
+		
+	</tr>
+	<tr>
+		<th style= "height: 7%; background-color:#F2F2F2; border:1px solid black;">일</th>
+		<th style= "height: 7%; background-color:#F2F2F2; border:1px solid black; ">월</th>
+		<th style= "height: 7%; background-color:#F2F2F2; border:1px solid black; ">화</th>
+		<th style= "height: 7%; background-color:#F2F2F2; border:1px solid black; ">수</th>
+		<th style= "height: 7%; background-color:#F2F2F2; border:1px solid black; ">목</th>
+		<th style= "height: 7%; background-color:#F2F2F2; border:1px solid black; ">금</th>
+		<th style= "height: 7%; background-color:#F2F2F2; border:1px solid black; " >토</th>
+		
+	</tr>
+	<tr>
+		<td style="height: 7%; border:1px solid black;"></td>
+		<td style="border:1px solid black; ">1</td>
+		<td style="border:1px solid black; ">2</td>
+		<td style="border:1px solid black; ">3</td>
+		<td style="border:1px solid black; ">4</td>
+		<td style="border:1px solid black; ">5</td>
+		<td style="border:1px solid black; ">6</td>
+	</tr>
+	<tr>
+		<td style="height: 7%; background-color: #81F7F3">7</td>
+		<td style="border:1px solid black; ">8</td>
+		<td style="border:1px solid black; ">9</td>
+		<td style="border:1px solid black; ">10</td>
+		<td style="border:1px solid black; ">11</td>
+		<td style="border:1px solid black; ">12</td>
+		<td style="border:1px solid black; ">13</td>
+	</tr>
+	<tr>
+		<td style="height: 7%; border:1px solid black;">14</td>
+		<td style="border:1px solid black; ">15</td>
+		<td style="border:1px solid black; ">16</td>
+		<td style="border:1px solid black; ">17</td>
+		<td style="border:1px solid black; ">18</td>
+		<td style="border:1px solid black; ">19</td>
+		<td style="border:1px solid black; ">20</td>
+	</tr>
+	<tr>
+		<td style="height: 7%; border:1px solid black;">21</td>
+		<td style="border:1px solid black; ">22</td>
+		<td style="border:1px solid black; ">23</td>
+		<td style="border:1px solid black; ">24</td>
+		<td style="border:1px solid black; ">25</td>
+		<td style="border:1px solid black; ">26</td>
+		<td style="border:1px solid black; ">27</td>
+	</tr>
+	<tr>
+		<td style="height: 7%; border:1px solid black;">28</td>
+		<td style="border:1px solid black; ">29</td>
+		<td style="border:1px solid black; ">30</td>
+		<td style="background-color:#F2F2F2; border:1px solid black;"></td>
+		<td style="background-color:#F2F2F2; border:1px solid black;"></td>
+		<td style="background-color:#F2F2F2; border:1px solid black;"></td>
+		<td style="background-color:#F2F2F2; border:1px solid black;"></td>
+	</tr>
+	<tr>
+		<td colspan="7" style="height: 6%; vertical-align: bottom;">	
+			
+			<p style="display: inline-block; color: red; font-size: 14px;">·2015년 6월 7일, 전체</p>
+			<p style="display: inline-block; font-size: 14px;">검색결과,</p>
+			<p style="display: inline-block; font-weight: bold; font-size: 14px;">진행중인 사업</p>
+			<p style="display: inline-block; font-size: 14px;">은</p>
+			<p style="display: inline-block; color: red; font-size: 14px;"> 총 614건 입니다.</p>
+		</td>
+		
+	</tr>
+	
+	
+	
+</table>
+
+<table style="width:900px; height: 300px; text-align: center;">
+
+	<tr>
+		<th style="background-color:#F2F2F2; border-bottom:1px solid black">번호</th>
+		<th style="background-color:#F2F2F2; border-bottom:1px solid black">지원사업명</th>
+		<th style="background-color:#F2F2F2; border-bottom:1px solid black">주관부처</th>
+		<th style="background-color:#F2F2F2; border-bottom:1px solid black">신청기간</th>
+		<th style="background-color:#F2F2F2; border-bottom:1px solid black">조회</th>
+	</tr>
+	<tr>
+		<td style="width: 5%; font-size: 14px; border-bottom:1px solid black">1</td>
+		<td style="width: 60%; font-size: 14px; border-bottom:1px solid black">2015년 창조경제 벤처창업대전 정부포상 및 전시회 참가 신청.. 
+			<button style="border:1px solid red; color: red; font-size: 10px; border-bottom:1px solid black">ON-LINE</button>
+		</td>
+		<td style="width: 10%; font-size: 14px; border-bottom:1px solid black">중소기업청</td>
+		<td style="width: 20%; font-size: 14px; border-bottom:1px solid black">2015.06.04~2015.06.30</td>
+		<td style="width: 5%; font-size: 14px; border-bottom:1px solid black">731</td>
+	</tr>
+	<tr>
+		<td style="font-size: 14px; border-bottom:1px solid black">10</td>
+		<td style="font-size: 14px; border-bottom:1px solid black">2015년 창조경제 벤처창업대전 정부포상 및 전시회 참가 신청.. 
+			<button style="border:1px solid red; color: red; font-size: 10px; border-bottom:1px solid black">ON-LINE</button>
+		</td>
+		<td style="width: 10%; font-size: 14px; border-bottom:1px solid black">중소기업청</td>
+		<td style="width: 20%; font-size: 14px; border-bottom:1px solid black">2015.06.04~2015.06.30</td>
+		<td style="width: 5%; font-size: 14px; border-bottom:1px solid black">731</td>
+	</tr>
+	<tr>
+		<td style="font-size: 14px; border-bottom:1px solid black">614</td>
+		<td style="font-size: 14px; border-bottom:1px solid black">2015년 창조경제 벤처창업대전 정부포상 및 전시회 참가 신청.. 
+			<button style="border:1px solid red; color: red; font-size: 10px; border-bottom:1px solid black">ON-LINE</button>
+		</td>
+		<td style="width: 10%; font-size: 14px; border-bottom:1px solid black">중소기업청</td>
+		<td style="width: 20%; font-size: 14px; border-bottom:1px solid black">2015.06.04~2015.06.30</td>
+		<td style="width: 5%; font-size: 14px; border-bottom:1px solid black">731</td>
+	</tr>
+	<tr>
+		<td style="font-size: 14px; border-bottom:1px solid black">614</td>
+		<td style="font-size: 14px; border-bottom:1px solid black">2015년 창조경제 벤처창업대전 정부포상 및 전시회 참가 신청.. 
+			<button style="border:1px solid red; color: red; font-size: 10px; border-bottom:1px solid black">ON-LINE</button>
+		</td>
+		<td style="width: 10%; font-size: 14px; border-bottom:1px solid black">중소기업청</td>
+		<td style="width: 20%; font-size: 14px; border-bottom:1px solid black">2015.06.04~2015.06.30</td>
+		<td style="width: 5%; font-size: 14px; border-bottom:1px solid black">731</td>
+	</tr>
+	<tr>
+		<td style="height: 25%;" colspan="5" >
+			<button>&#60;&#60;</button>
+			<button>&#60;</button>
+			<button style=" border:0; background-color: #58ACFA; color:white; font-size: 15px;">1</button>
+			<button style=" border:0; outline:0; background-color:white; font-size: 15px;">2</button>
+			<button style=" border:0; outline:0; background-color:white; font-size: 15px;">3</button>
+			<button style=" border:0; outline:0; background-color:white; font-size: 15px;">4</button>
+			<button style=" border:0; outline:0; background-color:white; font-size: 15px;">5</button>
+			<button>&#62;</button>
+			<button>&#62;&#62;</button>
+		</td>
+		
+	</tr>
+	<tr>
+		<td style="height: 20%;  background-color:#F2F2F2;"colspan="5">
+			<select name="search" size="1" style="width: 100px;">
+				<option value ="keyword" selected>키워드</option>
+				<option value ="title">제목</option>
+				<option value ="contents">내용</option>
+			</select>
+			<input type="text" name="address" value="" style="width:600px;"/>
+			<button style="width: 80px; border:0; background-color:#58ACFA; color:white; ">검색</button>
+		</td>
+		
+	</tr>
+	
+</table>
+
 <body>
 
 </body>
