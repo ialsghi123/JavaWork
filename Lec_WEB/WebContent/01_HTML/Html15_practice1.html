@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>주문 폼 작성</title>
+
+
+
+
+<style>
+table,th,td {
+	border:1px solid black; /*두께,선종류,선색상*/
+	border-collapse:collapse; /* border 붙이기  */
+	
+}
+
+</style>
+
+</head>
+<p>주문자 정보입력</p>
+<table style="width:900px; height: 200px;" >
+	<tr>
+		<th>주문자 정보</th>
+		<td style="width: 85%">비회원으로 상품 구매시 반드시 본인인증을 하셔야 합니다.
+			<button>휴대폰인증</button>
+			<button>아이핀인증</button>
+		<td>
+			
+		
+	</tr>
+	<tr>
+		<th style="height: 50%;">주소</th>
+		<td>
+			<input type="text" name="address" value="" style="width: 80px; margin: 3px;" disabled/>
+			<button>주소찾기</button> <br>
+			<input type="text" name="address" value="" style="width:600px; margin: 3px;"disabled/> <br>
+			<input type="text" name="address" value="" style="width:600px; margin: 3px;"/>
+		</td>
+		
+	</tr>
+	<tr>
+		<th>휴대전화</th>
+		<td>
+			<select name="phoneNumber" style="width: 80px">
+				<option value ="010" selected>010</option>
+				<option value ="011">011</option>
+				<option value ="016">016</option>
+				<option value ="017">017</option>
+			</select> 
+				&nbsp; - &nbsp;
+				<input type="text" name="phoneNumber" value="" style="width: 80px"/>
+				&nbsp; - &nbsp; 
+				<input type="text" name="phoneNumber" value="" style="width: 80px"/>
+				<input type="checkbox" name="agree" value="" checked>SMS 수신동의<br>
+		</td>
+		
+	</tr>
+	<tr>
+		<th>이메일</th>
+		<td>
+			<input type="text" name="phoneNumber" value="" style="width: 200px"/> 
+			@
+			<input type="text" name="phoneNumber" value="" style="width: 200px"/>
+			<select name="email" style="width: 100px">
+				<option value ="직접입력" selected>직접입력</option>
+				<option value ="naver">naver.com</option>
+				<option value ="daum">daum.net</option>
+				<option value ="nate">nate.com</option>
+			</select> 
+		</td>
+		
+	</tr>			
+		
+	
+</table>
+
+<p style="font-size: 12px">SK플래닛(주)는 통신판매중개자로서 통신판매의 당사자가 아니며, 개별판매자가 등록한 상품정보 및 거래에 대해 SK플래닛(주)는 일체의 책임을 지지 않습니다.</p>
+
+<br>
+<br>
+<p>배송지 정보 입력</p>
+<table style="width: 900px; height: 400px;">
+	<tr>
+		<th>배송지 선택</th>
+		<td style="width: 85%;">
+			<button>주문자 정보와 동일</button>
+		</td>
+	</tr>
+	<tr>
+		<th>받으시는분</th>
+		<td>
+			<input type="text" name="receiver" value="" style="width: 80px">
+		</td>
+	</tr>
+	<tr>
+		<th>주소</th>
+		<td style="height: 35%;">
+			<input type="text" name="address" value="" style="width: 80px; margin: 3px;" disabled/>
+			<button>주소찾기</button> 
+			<input type="checkbox" name="add" value="">배송지목록에 추가
+			<input type="text" name="address" value="" style="width:600px; margin: 3px;"disabled/> <br>
+			<input type="text" name="address" value="" style="width:600px; margin: 3px;"/>
+		</td>
+	</tr>
+	<tr>
+		<th>휴대전화</th>
+		<td>
+			<select name="phoneNumber" style="width: 80px">
+				<option value ="010" selected>010</option>
+				<option value ="011">011</option>
+				<option value ="016">016</option>
+				<option value ="017">017</option>
+			</select> 
+				&nbsp; - &nbsp;  
+				<input type="text" name="phoneNumber" value="" style="width: 80px"/>
+				&nbsp; - &nbsp;  
+				<input type="text" name="phoneNumber" value="" style="width: 80px"/>		
+			<input type="checkbox" name="free" value="">안심번호 사용(무료)
+			&nbsp;
+			<input type="checkbox" name="free" value="">집전화 추가 입력
+		</td>
+	</tr>
+	<tr>
+		<th>배송사요구사항</th>
+		<td style="height: 25%">
+			<input type="text" name="phoneNumber" value="" style="width: 600px"/> {0자/50자}
+			<p style="color: blue; font-size: 12px;">*특정한 배송일을 지정하고자 할 경우 판매자와 연락하여 배송일을 확인해주시기 바랍니다.</p>
+		</td>
+		
+	</tr>
+	
+</table>
+
+
+<br>
+<br>
+<p>결제 정보 입력</p>
+
+<table style="width: 700px; height: 300px;">
+	<tr>
+		<th>신용카드</th>
+		<td style="width: 80%">
+			<input type="radio" name="creditCard" value="nomal">신용카드(일반) &nbsp; &nbsp;
+			<input type="radio" name="creditCard" value="raw">신용카드(법인) &nbsp; &nbsp;
+			<input type="radio" name="creditCard" value="overseas">해외발급카드
+		</td>
+	</tr>
+	<tr>
+		<th>현금결제</th>
+		<td>
+			<input type="radio" name="pay" value="nomal">무통장입금 &nbsp; &nbsp;
+			<input type="radio" name="pay" value="send">실시간계좌이체 &nbsp; &nbsp;
+		</td>
+	</tr>
+	<tr>
+		<th>카드선택</th>
+		<td>
+			<select name="cardSelect" style="width: 150px">
+				<option value ="select" selected>선택하세요</option>
+				<option value ="kb">국민은행</option>
+				<option value ="sc">제일은행</option>
+				<option value ="shinhan">신한은행</option>
+			</select> 
+		</td>
+	</tr>
+	<tr>
+		<th>할부방식</th>
+		<td>
+			<select name="Installment" style="width: 150px">
+				<option value ="payment" selected>일시불</option>
+				<option value ="2month">2개월</option>
+				<option value ="3month">3개월</option>
+				<option value ="6month">6개월</option>
+			</select> 		
+		</td>
+	</tr>
+	<tr>
+		<th>결제안내</th>
+		<td>
+			<button style="font-size: 11px; color: red; border:1px solid red;">간편결제안내</button>
+			<button style="font-size: 11px">공인인증안내</button>
+			<button style="font-size: 11px">안전결제안내</button>
+			<button style="font-size: 11px">안신클릭안내</button>
+			<button style="font-size: 11px">해외발급카드안내</button>
+		</td>
+	</tr>				
+
+</table>
+
+<br>
+<br>
+
+<table style="width:900px; height: 50px;">
+	<tr>
+		<th colspan="2" style="width: 25%; height: 5%">정책차림표</th>
+		
+		<th colspan="2" style="width: 25%">미리보는 지원사업</th>
+		
+		<th colspan="2" style="width: 25%">마감임박 지원사업</th>
+		
+		<th style="width: 25%">접수중인 지원사업</th>
+	</tr>
+
+</table>
+
+
+<table style="width:900px; height: 600px;">
+	<tr>
+		<td colspan="7" style="font-size: 30px; text-align: center; color:blue; height: 10%">&#60;2015-06-17&#62;</td>
+		
+	</tr>
+	<tr>
+		<td colspan="7" style="height: 5%">
+			<input type="radio" name="field" value="">전체 &nbsp; &nbsp;
+			<input type="radio" name="field" value="">창업·벤쳐 &nbsp; &nbsp;
+			<input type="radio" name="field" value="">소상공인 &nbsp; &nbsp;
+			<input type="radio" name="field" value="">판로·수출 &nbsp; &nbsp;
+			<input type="radio" name="field" value="">R&D &nbsp; &nbsp;
+			<input type="radio" name="field" value="">금융·세제 &nbsp; &nbsp;
+			<input type="radio" name="field" value="">인력 &nbsp; &nbsp;
+		</td>
+		
+	</tr>
+	<tr>
+		<th style= "height: 5%;">일</th>
+		<th >월</th>
+		<th >화</th>
+		<th >수</th>
+		<th >목</th>
+		<th >금</th>
+		<th >토</th>
+		
+	</tr>
+	<tr>
+		<td style="height: 7%;"></td>
+		<td>1</td>
+		<td>2</td>
+		<td>3</td>
+		<td>4</td>
+		<td>5</td>
+		<td>6</td>
+	</tr>
+	<tr>
+		<td style="height: 7%;">7</td>
+		<td>8</td>
+		<td>9</td>
+		<td>10</td>
+		<td>11</td>
+		<td>12</td>
+		<td>13</td>
+	</tr>
+	<tr>
+		<td style="height: 7%;"></td>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	</tr>
+	<tr>
+		<td style="height: 7%;"></td>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	</tr>
+	<tr>
+		<td style="height: 7%;"></td>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	</tr>
+	<tr>
+		<td colspan="7" style="height: 5%"></td>
+		
+	</tr>
+	
+	
+	
+	
+</table>
+
+
+
+
+
+<body>
+
+</body>
+</html>
