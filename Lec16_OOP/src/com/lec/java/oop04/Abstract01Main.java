@@ -57,7 +57,7 @@ class TestClass extends TestAbstract{
 
 	@Override
 	public int testMethod() {
-		// TODO Auto-generated method stub
+		System.out.println("");
 		return 0;
 	}
 	
