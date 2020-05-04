@@ -51,6 +51,7 @@ public class File08Main {
 			Member m2 = new Member("guest","guest");
 			Member m3 = new Member("admin","admin123456");
 			
+			
 			oout.writeObject(m1);
 			oout.writeObject(m2);
 			oout.writeObject(m3);

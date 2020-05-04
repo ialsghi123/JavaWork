@@ -27,9 +27,11 @@ public class File02Main {
 		InputStream in = null; // InputStream 변수 선언
 		OutputStream out = null;  // OutputStream 변수 선언
 		
+		
 		try {
 			// FileInputStream 인스턴스 생성
 			in = new FileInputStream("temp/big_text.txt");
+			
 			
 			// FileOutputStream 인스턴스 생성
 			out = new FileOutputStream("temp/copy_big_text.txt");
