@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RWD box-sizing</title>
+
+    <style>
+        .container {
+            width: 200px;
+            height: 150px;
+            background-color: deepskyblue;
+        }
+
+        .box1{
+            background-color: firebrick;
+            width: 100px;
+            height: 50px;
+            float:left;
+            border: 1px solid black;
+        }
+
+        .box2{
+            background-color: gold;
+            width: 100px;
+            height: 50px;
+            float:left;
+            border: 1px solid black;
+        }
+
+        .menu1{
+            width: 25% ;
+            height: 50px;
+            border: 1px solid red;
+            float:left;
+            
+        }
+
+        .menu2{
+            width: 75% ;
+            height: 50px;
+            border: 1px solid red;
+            float:left;
+            
+        }
+
+        .item1 {
+            width: 35%;
+            height: 50px;
+            border: 1px solid red;
+            background-color: lightcoral;
+            float:left;
+        }
+
+        .item2 {
+            width: 65%;
+            height: 50px;
+            border: 1px solid red;
+            background-color: mediumslateblue;
+            float:left;
+        }
+
+        /* width 안에 border 포함 시키기*/
+        *{
+            box-sizing: border-box;
+        }
+
+    </style>
+
+</head>
+<!--
+    Responsive Web Design : 반응형 웹
+-->
+<body>
+    <div class="container">
+        <div class="box1">100px</div>
+        <div class="box2">100px</div>
+    </div>
+    <hr>
+    <div class="container">
+        <div class="menu1">25%</div>
+        <div class="menu2">75%</div>
+    </div>
+    <hr>
+    <div class="container">
+        <div class="item1">35%</div>
+        <div class="item2">65%</div>
+    </div>
+    
+</body>
+</html>
