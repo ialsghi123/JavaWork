@@ -13,7 +13,7 @@ public class Hello {
 		int a=10;
 		int b=1999;
 		
-		System.out.println(55+"-"+a+"=");
+		System.out.println(55+"-"+a+"="); //
 		
 	
 	

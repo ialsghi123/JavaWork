@@ -31,7 +31,7 @@ public class FirstJava {
 				
 		System.out.println("결과: "+10);
 		System.out.println("결과: "+10+20);
-		System.out.println("결과: "+(10+20));
+		System.out.println("결과: "+(10+20)); //dd
 		
 		//사칙연산 보여주기(+,-,*,/)
 		System.out.println("10+20="+(10+20));
