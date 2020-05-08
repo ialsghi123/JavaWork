@@ -10,7 +10,8 @@ th, td {padding: 5px;}
 </style>
 </head>
 <body>
-<form name="frm" action="https://www.w3schools.com/action_page.php">
+<form name="frm" action="https://www.w3schools.com/action_page.php" method="get" 
+onsubmit="return chkDelete();">
 <table>
 	<tr>
 		<th>check</th>
@@ -41,14 +42,35 @@ th, td {padding: 5px;}
 <br>
 
 <!--  TODO : onclick -->
-<button type="button">삭제하기</button><br>
+<!--주의:button을 form안에서 사용시 type 명시 안하면
+	자동적으로 submit 버튼으로 동작	
+-->
+<button type="button" onclick="chkDelete()">삭제하기</button><br>
 
 
 </form>
 
 <script>
 
-// TODO
+
+
+function chkDelete() {
+	//name = id 인 element(들)을 리턴
+	var e = document.getElementsByName('id')
+	if(frm['checkbox'].checked) {
+
+		alert("선택은 필수입니다");
+		frm['checkbox'].focus();
+		return;
+
+	}
+	return false;
+
+
+
+
+
+}
 
 </script>
 
