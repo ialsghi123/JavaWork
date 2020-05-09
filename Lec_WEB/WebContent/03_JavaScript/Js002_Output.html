@@ -15,39 +15,36 @@ JavaScript 가  출력하는 4가지 방법.
 
 <script>
 // 먼저 id='demo' 인 것 아래에서 실행한뒤에 위로 올려놓고 보여주자
+document.getElementById('demo').innerHTML = '로딩중 실행될까요?';
 
-document.getElementById('demo').innerHTML='로딩중 실행될까요?';
-
-function showRandom() {
-	document.getElementById('demo').innerHTML = Math.floor((Math.random()*10) +1);
+function showRandom(){
+	document.getElementById('demo').innerHTML = Math.floor((Math.random() * 10) + 1);   
 }
 
 </script>
 
-
 <h2 onclick="showRandom()">클릭하세요</h2>
 <p id="demo">1~10까지 난수</p>
 <script>
-	
-document.getElementById('demo').innerHTML='로딩중 실행될까요?';
+document.getElementById('demo').innerHTML = '로딩중 실행된다';
 </script>
 
 <br>
 
 <script>
 // 아래 코드는 '페이지가 로딩'될때 실행
-var text="로딩중에 document.write()";
+var text = "로딩중에 document.write()";
 document.write("<h2>" + text + "</h2>");
-
 </script>
 
-<!--document.write()는 , 로딩 완료후에 호출하면
-기존 로딩된 HTML 문서 다 지우고 write 함-->
-<p onclick="document.write('헉')">그러나 이것을 클릭하면..</p>
+<!-- document.write() 는,  로딩 완료후에 호출하면
+기존 로딩된 HTML 문서 다 지우고 write 함.
+-->
+<p onclick="document.write('헉 다 지워진다..')">그러나 이것을 클릭하면..</p>
 
 <br>
 
-<h2 onclick="alert('안된다')">클릭하면 팝업이..</h2>
+<h2 onclick="alert('짜잔~')">클릭하면 팝업이..</h2>
 
 <br>
 
@@ -56,13 +53,12 @@ document.write("<h2>" + text + "</h2>");
 
 <script>
 
-function showNumber(num) {
-	var i,j;
-	for(i=0; i<num; i++) {
-		j=i*2;
-		console.log("i=",i,", j=",j);
+function showNumber(num){
+	var i, j;
+	for(i = 0; i < num; i++){
+		j = i * 2;
+		console.log("i =", i, ", j =", j);
 	}
-
 }
 
 /*
@@ -80,6 +76,26 @@ function showNumber(num) {
 
 </script>
 
-
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

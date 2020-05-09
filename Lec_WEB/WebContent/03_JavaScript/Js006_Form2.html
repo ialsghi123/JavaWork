@@ -69,7 +69,7 @@
 	 
 	 if(frm['firstname'].value.trim() == ""){
 		 alert("First Name 은 필수 입니다");
-		//  return false;   // onsubmit 에 false 를 리턴하면 submit 안된다
+		 //return false;   // onsubmit 에 false 를 리턴하면 submit 안된다
 		 
 		 frm['firstname'].focus()  // return false 하기 전에 커서 위치 시키면 좋다
 		 return false;
@@ -98,15 +98,16 @@
 
 function chkSubmit3(){
 	var frm = document.forms.form3;
+	var age = frm.age.value.trim();
 
-	var age = frm.age.value;
-
-	//isNaN() : number 타입이면 false, number 아니면 true
+	// isNaN() : number 타입이면 false, number 아니면 true
 	if(isNaN(age) || age < 1 || age > 130){
 		alert(age + "는 유효한 값이 아닙니다\n1~130 사이 숫자 입력");
 		frm.age.focus();
 		return false;  // submit 안함
 	}
+
+	return true;  // submit 
 }
 
 </script>
@@ -125,7 +126,7 @@ function chkSubmit3(){
   <input type="text" name="firstname" required> <span class="important">*</span>
   <br><br>
   Last name:
-  <input type="text" name="lastname">
+  <input type="text" name="lastname" >
   <br><br>
   <input type="submit" value="제출">
 </form> 
@@ -145,14 +146,15 @@ function chkSubmit5(){
 	}
 	// return true; <-- submit 되지 않는다.
 
-	// frm.submit();   // form 객체를 submit 수행
+	//frm.submit();   // form 객체를 submit 수행
 
+	// confirm() 함수 :  확인 / 최소 선택에 따라 true/false 리턴
 	var a = confirm("제출하시겠습니까?");
 
-	if(a) {
+	if(a){
 		frm.submit();
-
 	}
+
 }
 </script>
 <form name="form5" action="https://www.w3schools.com/action_page.php" method="get">
@@ -178,7 +180,7 @@ var urlPat = /^(?:(?:(?:https?|ftp):)?\/\/)(?:\S+(?::\S*)?@)?(?:(?!(?:10|127)(?:
 var emailPat = /^[A-Za-z0-9_\.\-]+@[A-Za-z0-9\-]+\.[A-Za-z0-9\-]+/;
 
 
-function chkSubmit6() {
+function chkSubmit6(){
 	var frm = document.forms.form6;
 
 	var url = frm.url.value.trim();
@@ -205,10 +207,12 @@ function chkSubmit6() {
 	return true;
 }
 
+
+
 </script>
 <form name="form6" action="https://www.w3schools.com/action_page.php" method="get"
-onsubmit="return chkSubmit6()"> <!--  TOOD : onsubmit -->
-
+	onsubmit="return chkSubmit6()"> <!--  TOOD : onsubmit -->
+	
   url:
   <input type="text" name="url"><span id="urlwarn" class="important"></span>
   <br><br>
