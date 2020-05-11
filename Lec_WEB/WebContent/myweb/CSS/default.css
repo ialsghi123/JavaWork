@@ -13,7 +13,7 @@ body{
 }
 
 header {
-	height: 703px;
+	height: 700px;
 	margin: 0;
 	padding: 0;
 	border: 1px solid red;
@@ -87,11 +87,11 @@ nav#top_menu1 a:hover {
 	clear:both;
 }
 
-nav#top_menu2 #main_image{
-	width:100px;
-	height: 630px;
-	background-image: url(../images/blizzard/header_BGLarge\ \(1\).jpg);
-	
-
+#top_menu2 {
+	width: 100%;
+	height: 617px;
+	float:left;
+	border: 5px solid blue;
+	background-image: url(../images/blizzard/copy.jpg);
 }
 
