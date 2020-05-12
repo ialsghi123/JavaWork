@@ -26,6 +26,7 @@ header {
 	padding: 5px;
 }
 
+/* -----------------------------------nav top_menu1 시작--------------------------------------------- */
 nav#top_menu1 {
     width: 100%;
     height: 70px;
@@ -87,11 +88,71 @@ nav#top_menu1 a:hover {
 	clear:both;
 }
 
+/* -----------------------------------#top_menu2 시작--------------------------------------------- */
+
 #top_menu2 {
 	width: 100%;
 	height: 617px;
 	float:left;
 	border: 5px solid blue;
-	background-image: url(../images/blizzard/copy.jpg);
+	background-image: url(../image/blizzard/copy.jpg);
 }
 
+nav#top_menu2_banner {
+	width:85%;
+	height:160px;
+	background-color: rgb(150, 87, 42);
+	position: relative;
+	left:130px;
+	top:100px;
+	margin: 20px;
+	opacity: 0.8;
+	border-radius: 15px;
+	background-image: url();
+
+}
+
+#bannerIcon {
+	float: left;
+	
+}
+
+
+
+
+nav#top_menu2_banner ul {
+
+	list-style: none;
+	font-family: Verdana,Geneva,sans-serif;
+	font-size: 30px;
+	font-weight: 100;
+	
+}
+
+nav#top_menu2_banner ul li{
+	float: left;
+	margin: 0 5px;
+	padding: 30px;
+	margin: 20px 0 0 0;
+	
+}
+
+nav#top_menu2_banner a{
+	display: block;
+	height: 20px;
+	padding: 5px;
+	text-decoration: none;
+	color:rgb(209, 209, 23);
+}
+
+nav#top_menu2_banner a:hover {
+	color:white;
+}
+
+#gameplay {
+	padding: 10px;
+	background-color: purple;
+	font-size: 20px;
+	color:white;
+	margin: 50px 0 0 100px;
+}
