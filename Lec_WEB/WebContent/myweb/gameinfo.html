@@ -8,7 +8,181 @@
     <script src="JS/javascript.js"></script>
 </head>
 <body>
-    <input type="text">
+    <div id="wrapGameInfo">
+        <header> 
+
+            <nav id="top_menu1">
+                <div id="logo">
+                    <a href="index.html"><img src="../myweb/myimages/logo1.jpg" alt=""/></a>
+                </div>
+                <ul>
+                    <li><a href="#">게임</a></li>
+                    <li><a href="#">샵</a></li>
+                    <li><a href="#">새소식</a></li>
+                    <li><a href="#">e스포츠</a></li>
+                    <li><a href="#">이벤트</a></li>
+                    <li><a href="#">고객지원</a></li>  
+                </ul>
+
+                <div id="login"><a href="#">로그인</a><a href="signup.html">회원가입</a></div>
+                <div class="clear"></div>
+
+            </nav>
+            <div id="gameInfo_menu2">
+                
+                <nav id="top_menu2_banner">
+                    <div id="bannerIcon">
+                        <img src="../myweb/myimages/banner.png" alt="">
+                    </div>
+    
+                    <ul>
+                        <li><a href="gameinfo.html">게임소개</a></li>
+                        <li><a href="#">카드</a></li>
+                        <li><a href="#">커뮤니티</a></li>
+                        <li><a href="#">새소식</a></li>
+                        <li><a href="#">e스포츠</a></li> 
+                    </ul>
+                    <button id="gameplay" href="#">게임 플레이</button>
+                </nav>
+                <div id="infoTip">
+                    <h1>여관주인의 조언</h1>
+                    <h3>오호, 이제 하스스톤에 대해 좀 감을 잡으셨나 보군요. 좋습니다! 하지만 당신이 얼마나 게임에 능숙하든 알아야 할 몇 가지 사항들에 대해 말씀 드리고 싶군요. 거기 의자 하나 꺼내와서 앉으세요. 하스스톤을 즐기는 데 필요한 기본적인 설명과 숙련자가 될 수 있는 비결을 알려드리지요.</h3>
+                </div>
+                
+
+            </div>
+        </header>
+        <div class="clear"></div>
+        <article>
+            <div id="infoMainPage">
+                <div id="effect">
+                    <div class="textBar">
+                        <img src="../myweb/myimages/infologo.png">
+                        <a class="infoText">카드 효과 파악하기</a>
+
+                    </div>
+                    <p class="infoText3">지금쯤이면 하스스톤의 카드들이 크게 하수인, 주문, 그리고 무기 카드로 나뉜다는 것쯤은 아실 겁니다. 또한 “피해를 6줍니다.” 카드처럼 효과가 단순 명료할 때도 있고, 어떤 카드는 손에서 낼 때, 특정 조건이 부합될 때, 혹은 전장에 나와있을 때 효과를 낸다는 것도 아실 겁니다. 이런 카드 효과들을 파악하여 어떻게 전략적으로 사용할 수 있을지 살펴보죠.</p>
+                    <img class="fireball" src="../myweb/myimages/fireball.png">
+                    <div class="fireballText">
+                        <img src="../myweb/myimages/infologo1.png">
+                        <a class="infoText2">하수인 능력</a>
+                        <p class="infoText3">하수인들은 죽기 전까지 계속 효과를 발휘합니다. 예를 들어, 공격대장은 다른 모든 하수인들에게 공격력을 1 부여하고, 어린 용매는 질풍 능력으로 한 턴에 두 번 공격할 수 있습니다.</p>
+                        <img src="../myweb/myimages/infologo1.png">
+                        <a class="infoText2">발동효과</a>
+                        <p class="infoText3">이 효과들은 특정 조건이 맞춰져야 발동합니다.
+                            <ol>
+                                <li>전투의 함성 - 전투의 함성 효과는 해당 하수인을 낼 때 효과가 발동합니다. 예를 들어, 엘프 궁수는 전투의 함성 효과로 대상에게 피해를 1 입힙니다.</li>
+                                <li>비밀 - 비밀은 특정 조건에 부합하는 상황이 일어나면 저절로 발동합니다. 예를 들어, 주문왜곡사 카드는 상대가 하수인에게 주문을 사용하면 발동합니다.</li>
+                                <li>하수인 능력 - 일부 하수인들의 능력도 조건이 필요합니다. 예를 들어, 이교도 지도자는 아군 하수인 중 1마리가 죽을 때마다 카드를 한 장 뽑습니다.</li>
+                                <li>죽음의 메아리 - 죽음의 메아리 능력은 하수인이 죽을 때 발동합니다. 예를 들어, 전리품 수집가가 죽으면 당신은 카드를 한 장 뽑습니다.</li>
+                                <li>지속 효과 - 질풍, 은신, 혹은 왕의 축복과 같은 카드들은 해당 효과가 부여된 하수인이 죽을 때까지 효과가 지속됩니다. 단, 해당 하수인이 침묵 효과에 당하면 지속 효과가 모두 제거되죠.</li>
+                            </ol>
+                        </p>
+                    </div>
+                    <br><br>
+                    <img class="bomb" src="../myweb/myimages/bomb.png">
+                    <div id="combinationText">
+                        <img src="../myweb/myimages/infologo1.png">
+                        <a class="infoText2">조합</a>
+                        <p class="infoText3">어떤 카드들은 조합하면 무시무시한 효과를 낸답니다. 예를 들어,</p>
+                            <ol>
+                                <li>어린 용매 혼자서는 그저 성가신 존재에 불과하죠. 하지만 다음 턴에 힘의 축복 효과를 받으면 공격력이 3이나 증가한 상태에서 두 번 공격할 수 있는 겁니다. 꽤 아프겠죠?</li>
+                                <li>낼 때 무작위 대상들에게 피해 1을 3번 입히는 정신 나간 폭격수는 확실히 위험합니다. 자칫하다간 상대보다 내게 더 많은 피해를 입힐 수 있으니까요. 하지만, 고통의 수행사제나 구루바시 광전사를 내어 놓은 상태라면, 정신 나간 폭격수는 이름 그대로 정신 나간 이득을 당신에게 선사할 수 있을 겁니다.</li>
+                                <li>단검 곡예사는 기본 능력치 만으로도 훌륭한 하수인이지만, 단검 곡예사가 보랏빛 여교사와 함께 있으면 어떻게 될까요? 주문을 사용하면 하수인이 나오고, 하수인이 나올 때마다 단검 곡예사는 피해를 입힙니다.</li>
+                            </ol>
+                        <p class="infoText3">하스스톤에서 이런 조합은 정말로 무궁무진합니다. 요점은, 카드의 능력 자체도 중요하지만 다른 카드와 얼마나 어울리는 지 살펴보라는 거죠. 누가 압니까? 당신이 발견한 2장의 카드 조합으로 상대방은 어쩔 줄 몰라 쩔쩔 맬 수도 있다고요!</p>
+                    </div>
+                </div>
+                <div id="tactics">
+                    <div class="textBar">
+                        <img src="../myweb/myimages/infologo.png">
+                        <a class="infoText">카드 우위</a>
+                    </div>
+                    <p class="infoText3">가끔 이런 경우가 있습니다. 자신은 손에 들고 있는 카드를 모두 낼 수 있는데, 정작 상대는 10장에 가까운 카드를 계속 손에 쥐고 있을 때. 이러면 카드를 난사해야 할까요? 한 턴에 상대를 끝장낼 수 없다면, 그러지 말라고 조언하고 싶습니다. 왜냐고요? 바로 카드 우위 때문이죠.</p>
+                    <img class="cardimage" src="../myweb/myimages/cardimage.jpg">
+                    <p class="infoText3">간단히 말해서 카드 우위는 당신이 카드를 낼 수 있는 역량입니다. 손에 카드가 많을수록 상황에 적합한 카드를 낼 수 있겠죠. 고로, 상대보다 카드를 많이 들고 있으면 그만큼 당신은 카드 개수에서 우위를 점한 겁니다. 이와 유사하게 게임판에 하수인이 많이 있는 것도 카드 우위라 할 수 있습니다. 상대보다 하수인이 많다면, 선택적으로 공격을 계획하여 최대의 효과를 누릴 수 있으니까요.하스스톤에서 카드 우위를 점하는 주된 방법은 신비한 지능이나 가젯잔 경매인 등을 이용해서 카드를 더 많이 뽑는 것입니다. 카드 우위를 점하려면 아래의 사항을 염두에 두세요.</p>
+                    <img src="../myweb/myimages/infologo1.png">
+                    <a class="infoText2">필요 이상의 카드를 내지 마세요</a>
+                    <p class="infoText3">우위에 설 수 있을 만큼만 내세요. 확실한 승리가 보장되지 않는 한, 손에 든 카드가 너무 적거나, 없는 것은 매우 위험합니다..</p>
+                    <img src="../myweb/myimages/infologo1.png">
+                    <a class="infoText2">영리하게 교환하세요</a>
+                    <p class="infoText3">하수인 간의 전투를 체스판에서 말을 바꾸는 것으로 생각하세요. 하수인 셋을 희생하여 상대 하수인 하나를 잡는다면 그건 효율적인 교환이 아닙니다. 반대로, 카드 한 장으로 하수인 셋을 처리할 수 있다면 상당히 좋은 교환이죠.</p>
+                    <img src="../myweb/myimages/infologo1.png">
+                    <a class="infoText2">카드를 많이 뽑으세요</a>
+                    <p class="infoText3">카드를 뽑는 효과를 지닌 하수인이나 주문을 추가하세요. 카드를 계속 내면서도 뽑고 있으면 상대 입장에서 매우 난처할 겁니다.</p>
+                </div>
+                <div id="tip">
+                    <div class="textBar">
+                        <img src="../myweb/myimages/infologo.png">
+                        <a class="infoText">초보자들을 위한 팁</a>
+                    </div>
+                    <img class="host" src="../myweb/myimages/host.jpg">
+                    <p class="infoText3">회심의 한 방을 영웅에게 쓰지 않고 도발 하수인에게 사용해버린 마법사나, 지나치게 강한 하수인을 도끼로 공격하다 되려 쓰러진 전사도 있습니다. 저는 이런 상황들을 다 지켜보았습니다. 더욱 노련한 하스스톤 플레이어가 될 수 있도록 당신께도 제가 겪고 알게 된 지식을 알려드리겠습니다.</p>
+                    <img src="../myweb/myimages/infologo1.png">
+                    <a class="infoText2">너무 자만하지 마세요</a>
+                    <p class="infoText3">상황에 필요한 만큼의 카드만 내세요. 특히나 상대보다 우위를 점하고 있다면요. 갑자기 판도를 바꾸는 카드를 상대방이 쓸 수도 있습니다. 그때를 위해 비상용 카드들을 항상 남겨두세요.</p>
+                    <img src="../myweb/myimages/infologo1.png">
+                    <a class="infoText2">하수인을 과하게 강화하지 마세요</a>
+                    <p class="infoText3">강화 효과는 분명 강력합니다. 하지만 강화 주문이 많아도 주문을 걸 하수인이 없다면 무용지물이죠. 비슷한 경우로 같은 하수인에게 다량의 강화 효과를 부여하는 것도 위험합니다. 수많은 강화 효과로 전지전능해진 하수인이 돌연 침묵 효과에 당하거나 양이 되어버리면… 정말 슬프겠죠.</p>
+                    <img src="../myweb/myimages/infologo1.png">
+                    <a class="infoText2">직접 피해 주문을 아끼세요</a>
+                    <p class="infoText3">첫 턴에 신비한 화살을 쓰면 상대 영웅에게 피해를 3 주는 것으로 끝납니다. 차라리 카드를 남겨두어 더 적합한 때에 사용하세요. 생명력이 1이 남은 적 하수인을 끝장내던가 할 때처럼요.</p>
+                    <img src="../myweb/myimages/infologo1.png">
+                    <a class="infoText2">덱을 너무 복잡하게 구성하지 마세요</a>
+                    <p class="infoText3">지나치게 카드 조합에만 의존하는 덱을 짜면 문제가 발생합니다. 바로 적절한 카드를 적시에 얻지 못하면 한없이 약해진다는 것이죠. 강력하면서도 되도록 단순한 조합을 준비하면서 주된 흐름을 유지할 수 있는 덱을 만드세요.</p>
+                    <img src="../myweb/myimages/infologo1.png">
+                    <a class="infoText2">카드를 너무 아끼지는 마세요</a>
+                    <p class="infoText3">아까 카드를 아끼라고 말씀 드렸죠? 하지만 무엇이든 과한 건 좋지 않습니다. 지금 즉시 큰 이득을 취할 수 있는 주문이나 하수인 카드가 있으면, 바로 사용하세요!</p>
+                </div>
+
+            </div>
+
+        </article>
+        <footer>
+            <div class="footerMain">
+                <div class="youtube">
+                    <a href="#"><img src="../myweb/myimages/youtube.png" width="70px" height="70px" ></a>
+                </div>
+                <div class="facebook">
+                    <a href="#"><img src="../myweb/myimages/facebook.png" width="70px" height="70px"></a>
+                </div>
+                <div class="instagram">
+                    <a href="#"><img src="../myweb/myimages/instagram.png" width="70px" height="70px"></a>
+                </div>       
+            </div>
+            
+            <div class="footerMid">
+                <div class="logoImage">
+                    <img src="../myweb/myimages/logo2.jpg" width="150px" height="100px">
+                </div>
+                <div class="clear"></div>
+                <div class="private">
+                    <a>인재 채용회사 소개고객지원보도 자료API블리자드 PC방</a><br>
+                    <a>©2020 BLIZZARD ENTERTAINMENT, INC. 모든 권리는 BLIZZARD ENTERTAINMENT에 있습니다.</a><br>
+                    <a>여기서 언급된 다른 모든 상표는 각 소유권자들의 자산입니다.</a><br>
+                    <a>개인정보 처리방침법률 관련 문서이용 약관쿠키</a> <br><br><br>
+                </div>
+            </div>
+
+            <div class="footerEnd">
+                <div class="company">
+                    <a>블리자드 엔터테인먼트 유한 회사</a><br>
+                    <a>주소: 06164 서울시 강남구 테헤란로 521 파르나스타워 15층</a><br>
+                    <a>대표 번호: 1644-0727 | 팩스 번호: (02)544-3038 | 이메일: websupport@blizzard.co.kr</a><br>
+                    <a>사업자 등록 번호: 211-87-49910 | 통신 판매업 신고 번호: 강남-6017호 | 사업자정보확인</a><br>
+                    <a>대표이사: 자렛 알렌 브랙, 전동진 | 개인정보 보호책임자: 전동진 대표이사</a>
+                </div>
+                <div class="clear"></div>
+                <div class="image1">
+                    <img src="../myweb/myimages/12.4TCwq.png">
+                    <img src="../myweb/myimages/violence.1pDPe.png">
+                </div>
+                <div class="image2">
+                    <img src="../myweb/myimages/hs.3xqLF.png">
+                </div>
+               
+            </div>
+    </div>
     
 
 </body>
