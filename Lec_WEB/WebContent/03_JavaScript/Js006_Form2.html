@@ -7,6 +7,11 @@
 .important {
 	color:red;
 }
+
+#formdiv {
+	position: relative;
+	top:
+}
 </style>
 </head>
 <!-- 
@@ -210,18 +215,21 @@ function chkSubmit6(){
 
 
 </script>
-<form name="form6" action="https://www.w3schools.com/action_page.php" method="get"
-	onsubmit="return chkSubmit6()"> <!--  TOOD : onsubmit -->
+<div class="formdiv">
+	<form name="form6" action="https://www.w3schools.com/action_page.php" method="get"
+		onsubmit="return chkSubmit6()"> <!--  TOOD : onsubmit -->
+		
+	  url:
+	  <input type="text" name="url"><span id="urlwarn" class="important"></span>
+	  <br><br>
+	  email:
+	  <input type="text" name="email"><span id="emailwarn" class="important"></span>
+	  <br><br>
 	
-  url:
-  <input type="text" name="url"><span id="urlwarn" class="important"></span>
-  <br><br>
-  email:
-  <input type="text" name="email"><span id="emailwarn" class="important"></span>
-  <br><br>
+	  <input type="submit" value="제출">
+	</form>
 
-  <input type="submit" value="제출">
-</form>
+</div>
 
 <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 </body>
