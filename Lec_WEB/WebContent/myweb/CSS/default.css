@@ -39,8 +39,8 @@ nav#top_menu1 {
     width: 100%;
     height: 70px;
 	background-color: black;
-	
-	float: right;	
+    float: right;	
+    
 }
 
 
@@ -101,72 +101,71 @@ nav#top_menu1 a:hover {
 	height: 625px;
 	float:left;
 	/* border: 1px solid blue; */
-	background-image: url(../myimages/background_battle.jpg);
+    background-image: url(../myimages/background_battle.jpg);
+    
 }
 
-nav#top_menu2_banner {
-	width:85%;
-	height:160px;
-	background-color: rgb(150, 87, 42);
-	
-	margin: 100px auto;
 
-	opacity: 0.8;
-	border-radius: 15px;
-	
-	
-
-}
 
 #bannerIcon {
-	float: left;
-	
-}
-
-
-
-nav#top_menu2_banner ul {
-
-	list-style: none;
-	font-family: Verdana,Geneva,sans-serif;
-	font-size: 30px;
-	font-weight: 100;
-	
-}
-
-nav#top_menu2_banner ul li{
-	float: left;
-	margin: 0 5px;
-	padding: 35px;
-	margin: 25px 0 0 15px;
-	border: 3px solid white;
-	
+    float: left;
+    position: relative;
+	bottom:20px;
 	
 	
 }
 
-nav#top_menu2_banner a{
-	display: block;
-	height: 30px;
-	padding: 3px;
-	text-decoration: none;
-	margin:0 0 5px 0;
-	color:rgb(209, 209, 23);
-	
+#bannerIcon:hover {
+    cursor: pointer;
 }
 
-nav#top_menu2_banner a:hover {
-	color:white;
+
+#w3-bar  {
+    position: static; 
+    margin: 100px auto;
+    width: 85%;
+    height:120px;
+    border-radius: 10px;
+    background-color:#723E0E;
+    opacity: 0.9;
+    
+    
 }
+
+#barControl {
+    display: inline-block;
+    margin: 0 0 0 30px;
+}
+
+#w3Text1 {
+    margin: 25px 40px 0 0;
+    left:100px;
+    font-size: 30px;
+    color: #FCDE03;
+    
+}
+
+#w3Text2 {
+    font-size: 22px;
+    color: #FCDE03;
+    background-color: #723E0E;
+}
+
+
+
+
+
+
 
 #gameplay {
 	padding: 10px;
 	background-color: purple;
-	font-size: 22px;
+	font-size: 20px;
 	color:white;
-	margin: 50px 0 0 90px;
+	margin: 30px 50px 0 0;
 	cursor:pointer;
-	border-radius: 10px;
+    border-radius: 10px;
+    float:right;
 
 }
 
@@ -220,6 +219,8 @@ nav#top_menu2_banner a:hover {
 	
 	
 }
+
+
 
 .shaman:hover,.warrior:hover,.rogue:hover,.paladin:hover {
 	transform: scale(1.1);
@@ -278,6 +279,7 @@ nav#top_menu2_banner a:hover {
 }
 
 .logoImage {
+	margin-top: 30px;
 	text-align: center;
 	
 }
@@ -287,9 +289,14 @@ nav#top_menu2_banner a:hover {
 	text-align: center;
 }
 
+.footerDev {
+	font-size: 20px;
+}
+
 .company {
 	color:white;
 	text-align: center;
+	font-size: 12px;
 }
 
 .image1 {
@@ -454,24 +461,103 @@ nav#signUpHeader a:hover {
 
 /*------------------- ★ joinMain ★-------------------- */
 
-#joinInput {
-	width: 800px;
-	height: 700px;
-	border: 1px solid red;
+#wrapJoin article {
+	width:100%;
+	height: 1000px;
+	background-image: url(../myimages/dark.jpg);
+	float:left;
+	
+	
+} 
+
+.joinText {
+	color: ivory;
+	font-size: 30px;
 	position: relative;
-	margin:200px auto;
-	text-align: center;
+	top:50px;
 }
 
 #joinMain {
-	/* text-align: center; */
+	margin-top: 40px;
+}
+
+#joinInput {
+	width: 800px;
+	height: 700px;
+	/* border: 1px solid #BABDBE; */
+	position: relative;
+	margin:150px auto;
+	text-align: center;
+	opacity: 0.9;
+	/* border-radius: 20px; */
+}
+
+  
+#wrapJoin footer {
+	background-image:url(../myimages/footer.jpg);
+	width: 100%;
+	height: 749px;
+	float: left;
+
+	
+}
+
+input[type=text] {
+	width:60%;
+	padding: 12px 20px;
+	margin:8px 0;
+	display: inline-block;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	box-sizing: border-box;
+}
+
+input[type=password] {
+	width:60%;
+	padding: 12px 20px;
+	margin:8px 0;
+	display: inline-block;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	box-sizing: border-box;
 }
 
 
-  
-  
 
+input[type=email] {
+	width:60%;
+	padding: 12px 20px;
+	margin:8px 0;
+	display: inline-block;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	box-sizing: border-box;
+}
 
+input[type=tel] {
+	width:60%;
+	padding: 12px 20px;
+	margin:8px 0;
+	display: inline-block;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	box-sizing: border-box;
+}
+
+input[type=button], input[type=submit] {
+	background-color: black;
+	border: 1px solid #1497FB;
+	color: #1497FB;
+	padding: 16px 32px;
+	text-decoration: none;
+	margin: 0 4px;
+	cursor: pointer;
+  }
+
+input[type=button]:hover, input[type=submit]:hover {
+	color: #03DCF6;
+	border: 1px solid #03DCF6;
+}
 
 
 
@@ -623,8 +709,12 @@ nav#signUpHeader a:hover {
 .host {
 	float:right;
 	border-radius: 10px;
-	margin:10px 10px 0 0 ;
-	
+	margin:10px 10px 0 0 ;	
+
+}
+
+.fireball:hover,.bomb:hover,.cardimage:hover {
+	transform: scale(1.1);
 
 }
 
@@ -636,12 +726,16 @@ nav#signUpHeader a:hover {
 	border-radius: 10px;
 }
 
+.infoImage {
+	margin: 7px 0 0 7px;
+}
+
 .infoText {
 	font-family: Arial,Helvetica,sans-serif;
 	font-size: 24px;
 	font-weight: bold;
 	position: relative;
-	bottom: 10px;
+	top:10px;
 }
 
 .infoText2 {
@@ -650,7 +744,7 @@ nav#signUpHeader a:hover {
 	color: darkblue;
 	font-weight: 600;
 	position: relative;
-	bottom: 5px;
+	top:5px;
 	font-weight: 50px;
 
 }
@@ -724,4 +818,6 @@ nav#signUpHeader a:hover {
 .image2 {
 	text-align: center;
 }
+
+
 
