@@ -1,17 +1,15 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="ko">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>doGet() 메소드 동작 확인</title>
+<title>sub</title>
 </head>
 <body>
 
-<form method="post"action="Sev">
-	<input type="submit">
-</form>
-<br>
-<a href="Sev">클릭해보세요</a>
+<h4>현재 페이지는 sub 페이지 입니다.</h4>
 
 </body>
 </html>
