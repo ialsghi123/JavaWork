@@ -43,9 +43,9 @@ public class ServletCycle extends HttpServlet {
 		System.out.println("doPost 호출");
 	}
 	
-	@Override
-	protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		System.out.println("service() 호출");
-	}
+//	@Override
+//	protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+//		System.out.println("service() 호출");
+//	}
 
 }

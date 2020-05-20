@@ -30,20 +30,6 @@ public class ServletForm extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		response.getWriter().append("Served at: ").append(request.getContextPath());
 		
-		System.out.println("getParameterNames() 사용");
-		Enumeration<String> names = request.getParameterNames();
-		while(names.hasMoreElements()) {
-			String paramName = names.nextElement();
-			String paramValue = request.getParameter(paramName);
-			System.out.println(paramName + " : " + paramValue);
-		}
-		
-		System.out.println("getParameterMap() 사용");
-		Map<String, String[]> paramMap = request.getParameterMap();
-		for(String key : paramMap.keySet()) {
-			System.out.println(key + " : " + Arrays.toString(paramMap.get(key)));
-		}
-		
 	}
 
 	
