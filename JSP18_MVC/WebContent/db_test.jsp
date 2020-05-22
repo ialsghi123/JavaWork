@@ -1,31 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ page import = "java.sql.*" %> <%-- JDBC 관련 import --%>
-
-<%
-	request.setCharacterEncoding("utf-8"); //한글 인코딩!	
-
-	
-	String name = request.getParameter("name");
-	String subject = request.getParameter("subject");
-	String content = request.getParameter("content");
-	
-	
-	if(name == null || subject == null ||
-		name.trim().equals("") || subject.trim().equals("")) {
-%>
-		<script>
-			alert("작성자, 글 제목은 필수입니다");
-			history.back();
-		</script>	
-				
-<%
-		return;
-	}
-
-%>		
-		
-<%!	
+<%!
 	//JDBC 관련 기본 객체 변수
 	Connection conn = null;
 	Statement stmt = null;
@@ -39,8 +15,7 @@
 	final String USERID = "scott0316";
 	final String USERPW = "tiger0316";
 	
-%>   
-
+%>
 
 <%!
 	//쿼리문 준비
@@ -75,4 +50,17 @@
 
 <%--위 트랜잭션이 마무리되면 페이지 보여주기 --%>
 
- 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
