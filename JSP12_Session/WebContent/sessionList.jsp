@@ -25,7 +25,7 @@
 	int i = 0;
 	while(enumeration.hasMoreElements()) {
 			
-		sessionName = enumeration.nextElement();
+		sessionName = enumeration.nextElement().toString();
 		//session.getAttribute(sessionName) <-- 특정 name의 세션값 추출, name 없으면 null 리턴
 		sessionValue = session.getAttribute(sessionName).toString();
 		out.println((i+1)+"]" + sessionName + " : " +sessionValue+"<br>");

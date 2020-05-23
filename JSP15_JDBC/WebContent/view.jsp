@@ -143,7 +143,7 @@ function chkDelete(uid) {
 </script>
 
 <body>
-<h2>읽기<%=subject %></h2>
+<h2>읽기 <%= subject %></h2>
 <br>
 UID : <%=uid %><br>
 작성자: <%=name %><br>
