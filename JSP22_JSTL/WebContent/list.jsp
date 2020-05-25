@@ -1,10 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ page import="com.lec.beans.*" %>    
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 
-<%  // Controller 로부터 결과 데이터 받음.
-	WriteDTO [] arr = (WriteDTO [])request.getAttribute("list");
-%>
+<%-- JSTL 버전으로 바뀌니,import 번잡함도 사라진다. JAVA 변수 선언도 사라진다 --%>
+
 
 <!DOCTYPE html>
 <html lang="ko">
@@ -32,21 +32,23 @@ table, th, td {
 				<th>조회수</th>
 				<th>등록일</th>
 			</tr>
-<%
-	if(arr != null){
-		for(int i = 0; i < arr.length; i++){
-%>
-			<tr>
-				<td><%= arr[i].getUid() %></td>
-				<td><a href="view.do?uid=<%= arr[i].getUid()%>"><%= arr[i].getSubject() %></a></td>
-				<td><%= arr[i].getName() %></td>
-				<td><%= arr[i].getViewCnt() %></td>
-				<td><%= arr[i].getRegDate() %></td>
-			</tr>
-<%			
-		} // end for
-	} // end if
-%>
+		<c:choose>
+			<c:when test="${empty list || fn:length(list)==0 }">
+			</c:when>
+			<c:otherwise>
+			
+			<c:forEach var="dto" items="${list }">
+				<tr>
+					<td>${dto.uid }</td>
+					<td><a href="view.do?uid=${dto.uid }">${dto.subject }</a></td>
+					<td>${dto.name }</td>
+					<td>${dto.viewCnt }</td>
+					<td>${dto.regDate }</td>
+				</tr>
+			</c:forEach>
+			</c:otherwise>
+		</c:choose>
+
 		</table>
 		<br>
 		<button onclick="location.href='write.do'">신규등록</button>

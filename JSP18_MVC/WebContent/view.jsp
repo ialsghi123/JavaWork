@@ -1,32 +1,25 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ page import = "com.lec.beans.*" %>
-<jsp:useBean id="dao" class="com.lec.beans.WriteDAO"/>
 
-<% // parameter 받아오기 
+<%@ page import="com.lec.beans.*" %>
 
-	int uid = Integer.parseInt(request.getParameter("uid"));
-	// ※이 단계에서 parameter 검증 필요
+<% // Controller 로부터 결과 데이터 받음
+	WriteDTO [] arr = (WriteDTO [])request.getAttribute("list");
 %>
 
-<% //dao 사용한 트랜잭션
-	WriteDTO [] arr =dao.readByUid(uid);
-%>	
-
 <%
-	if(arr == null || arr.length ==0) {
-%>	
+	if(arr == null || arr.length == 0){ 
+%>
 			<script>
 				alert("해당 정보가 삭제되거나 없습니다");
 				history.back();
 			</script>
 <%
-		return; //더이상 JSP 프로세싱 하지않고 종료
-	} //end if
-	
+		return;   // 더이상 JSP 프로세싱 하지 않고 종료
+	} // end if
 %>
-
 <%
+	int uid = arr[0].getUid();
 	String name = arr[0].getName();
 	String subject = arr[0].getSubject();
 	String content = arr[0].getContent();
@@ -41,44 +34,40 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>읽기<%= subject %></title> <!-- title에 글제목 넣기 -->
+<title>읽기 <%= subject %></title> <!-- title에 글제목 넣기 -->
 </head>
 <script>
-function chkDelete(uid) {
-	//삭제 여부, 다시 확인하고 진행하기
-	var r = confirm("삭제 하시겠습니까?");
-	if(r) {
-		location.href ='deleteOk.do?uid=' + uid;
+function chkDelete(uid){
+	// 삭제 여부, 다시 확인 하고 진행하기
+	var r = confirm("삭제하시겠습니까?");
+	if(r){
+		location.href = 'deleteOk.do?uid=' + uid;
 	}
 }
-
 </script>
-
 <body>
-<h2>읽기<%=subject %></h2>
+<h2>읽기 <%= subject %></h2>
 <br>
-UID : <%=uid %><br>
-작성자: <%=name %><br>
-제목: <%=subject %><br>
-등록일: <%=regDate %><br>
-조회수:<%=viewCnt %> <br>
-내용:<br>
+UID : <%= uid %><br>
+작성자 : <%= name %><br>
+제목 : <%= subject %><br>
+등록일 : <%= regDate %><br>
+조회수 : <%= viewCnt %><br>
+내용: <br>
 <hr>
 <div>
-<%=content %>
+<%= content %>
 </div>
 <hr>
 <br>
-<button onclick="location.href='update.do?uid=<%=uid%>'">수정하기</button>
+<button onclick="location.href='update.do?uid=<%= uid%>'">수정하기</button>
 <button onclick="location.href = 'list.do'">목록보기</button>
-<button onclick="chkDelete(<%=uid%>)">삭제하기</button>
+<button onclick="chkDelete(<%= uid %>)">삭제하기</button>
 <button onclick="location.href = 'write.do'">신규등록</button>
 
-
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 </body>
 </html>
-
-
 
 
 
