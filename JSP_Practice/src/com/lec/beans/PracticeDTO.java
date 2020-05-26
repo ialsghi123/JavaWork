@@ -1,41 +1,31 @@
 package com.lec.beans;
 
-// DTO : Data Transfer Object
-// 데이터를 담아 나르기 위한 객체
-
-// 게시글 DTO, 회원DTO,.. 필요한 데이터 객체들 만큼 정의
-// Bean 객체
-
-public class WriteDTO {
-	private int uid; //wr_uid
-	private String subject; //wr_subject
-	private String content; //wr_content
-	private String name; //wr_name
-	private int viewCnt; //wr_viewcnt
-	private String regDate; //wr_regdate
+public class PracticeDTO {
+	private int uid;
+	private String subject;
+	private String name;
+	private String content;
+	private int viewCnt;
+	private int recommend;
+	private String regDate;
 	
-	
-	// 개발시..
-	// 다음 3가지 네이밍은 일치시켜 주는것이 좋다.
-	// 클래스 필드명 = DB 필드명 = form 의 name명
-	
-	//기본 생성자, 매개변수 생성자, getter / setter
-	
-	public WriteDTO() {
+	public PracticeDTO() {
 		super();
-		System.out.println("WriteDTO() 객체 생성");
+		System.out.println("PracticeDTO() 객체 생성");
 	}
 
-	public WriteDTO(int uid, String subject, String content, String name, int viewCnt) {
+	public PracticeDTO(int uid, String subject, String name, String content, int viewCnt,int recommend) {
 		super();
 		this.uid = uid;
 		this.subject = subject;
-		this.content = content;
 		this.name = name;
+		this.content = content;
 		this.viewCnt = viewCnt;
-		System.out.println("WriteDTO(uid, subject, content, name, viewCnt) 객체 생성");
-		
+		this.recommend = recommend;
+		System.out.println("PracticeDTO(uid, subject, content, name, viewCnt,recommend) 객체 생성");
+
 	}
+
 
 	public int getUid() {
 		System.out.println("getUid() 호출");
@@ -97,16 +87,23 @@ public class WriteDTO {
 		this.regDate = regDate;
 	}
 	
+	public int getRecommend() {
+		System.out.println("getRecommend() 호출");
+		return recommend;
+	}
 	
-
-
-	//테스트, 개발용으로 toString() 오버라이딩하면 좋다
+	public void setRecommend(int recommend) {
+		System.out.println("setRecommend(" + recommend + ")");
+		this.recommend = recommend;
+	}
+	
 	@Override
 	public String toString() {
 		
 		return "WriteDTO] " + uid + " : " + subject + " : " + content  + " : " + name + " : " 
-				+ viewCnt + " : " + regDate;
+				+ viewCnt + " : " + regDate + " : " + recommend;
 	}
 
 	
+
 }

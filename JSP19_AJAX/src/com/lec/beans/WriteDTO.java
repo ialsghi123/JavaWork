@@ -14,7 +14,6 @@ public class WriteDTO {
 	private int viewCnt; //wr_viewcnt
 	private String regDate; //wr_regdate
 	
-	
 	// 개발시..
 	// 다음 3가지 네이밍은 일치시켜 주는것이 좋다.
 	// 클래스 필드명 = DB 필드명 = form 의 name명
@@ -97,9 +96,6 @@ public class WriteDTO {
 		this.regDate = regDate;
 	}
 	
-	
-
-
 	//테스트, 개발용으로 toString() 오버라이딩하면 좋다
 	@Override
 	public String toString() {
