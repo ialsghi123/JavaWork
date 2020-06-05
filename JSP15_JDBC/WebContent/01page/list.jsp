@@ -196,8 +196,5 @@ table, th ,td {
 </jsp:include>
 
 
-    
-
-
 </body>
 </html>
