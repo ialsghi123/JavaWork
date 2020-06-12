@@ -1,6 +1,5 @@
 package com.lec.java.crawl06;
 
-
 import java.awt.image.BufferedImage;
 import java.io.BufferedInputStream;
 import java.io.BufferedOutputStream;
@@ -14,8 +13,6 @@ import java.net.URL;
 import java.net.URLDecoder;
 
 import javax.imageio.ImageIO;
-
-
 
 /* 웹에서 이미지와 같은 바이너리 형태 리소스 다운로드 받기
  * 
@@ -179,6 +176,7 @@ public class Crawl06Main {
 		ImageIO.write(imgData, "jpg", file);
 		
 		System.out.println("다운로드: " + srcUrl + " → " + dstFile);
+		System.out.println("\t" + imgData.getWidth() + " x " + imgData.getHeight()); 
 		
 	} // end download3()
 	
@@ -191,6 +189,14 @@ public class Crawl06Main {
 	
 	
 } // end class
+
+
+
+
+
+
+
+
 
 
 

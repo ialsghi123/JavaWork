@@ -55,7 +55,7 @@ public class Crawl08Main {
 		url = String.format("https://search.daum.net/search?w=blog&DA=PGD&enc=utf8&q=%s&page=%d", 
 				URLEncoder.encode(search, "utf-8"), page);
 		
-		System.out.println(url); // 확인용
+		//System.out.println(url); // 확인용
 		doc = Jsoup.connect(url).execute().parse();
 		
 		elements = doc.select("#blogColl .list_info li .wrap_cont");
@@ -75,6 +75,9 @@ public class Crawl08Main {
 	
 
 } // end class
+
+
+
 
 
 

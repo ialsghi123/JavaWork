@@ -26,65 +26,63 @@ import org.jsoup.select.Elements;
  *    
  */
 public class Crawl05Main {
-	
-	private static final String PATH="books";
 
+	private static final String PATH = "books";
+	
 	public static void main(String[] args) throws IOException {
 		System.out.println("yes24.com 검색결과 페이지");
 		
-		Scanner sc=new Scanner(System.in);
-		System.out.println("검색어를 입력하세요:");
-		String search=sc.nextLine();
+		Scanner sc = new Scanner(System.in);
+		System.out.print("검색어를 입력하세요: ");
+		String search = sc.nextLine(); 
 		sc.close();
 		
-		Crawl05Main app=new Crawl05Main();
-		ArrayList<Infobook> list = app.crawlYes24(search);
+		Crawl05Main app = new Crawl05Main();
+		ArrayList<InfoBook> list = app.crawlYes24(search);
 		
-		//썸네일 이미지 다운로드 받아서
-		//thumb001.jpg~thumb020.jpg...
+		// 썸네일 이미지 다운로드 받아서
+		// thumb001.jpg ~ thumb020.jpg ...
 		
-		int fileIndex=1;
-		for(Infobook e:list) {
-			System.out.println(e); //크롤링 정보 출력
+		int fileIndex = 1;
+		for(InfoBook e : list) {
+			System.out.println(e);  // 크롤링 정보 출력
 			
-			//썸네일 이미지 다운로드
-			String fileName=String.format(PATH+File.separator+"thumb%03d.jpg", fileIndex);
-			URL imgUrl=new URL(e.getImgUrl());
-			BufferedImage imgData=ImageIO.read(imgUrl);
+			// 썸네일 이미지 다운로드
+			String fileName = String.format(PATH + File.separator + "thumb%03d.jpg", fileIndex);
+			URL imgUrl = new URL(e.getImgUrl());
+			
+			BufferedImage imgData = ImageIO.read(imgUrl);
 			File file = new File(fileName);
-			ImageIO.write(imgData,"jpg",file);
+			ImageIO.write(imgData, "jpg", file);			
 			
-			System.out.println(fileName+"이 저장되었습니다");
-			
+			System.out.println(fileName + " 이 저장되었습니다");
 			fileIndex++;
 		}
-		
 		
 		System.out.println("\n프로그램 종료");
 	} // end main()
 
 	
-	private ArrayList<Infobook> crawlYes24(String search) throws IOException {
-		ArrayList<Infobook> list = new ArrayList<Infobook>();
+	private ArrayList<InfoBook> crawlYes24(String search) throws IOException {
+		ArrayList<InfoBook> list = new ArrayList<InfoBook>();
 		
-		// TODO
 		String url;
-		Document doc; 
+		Document doc;
 		Response response;
 		Elements elements;
 		Elements rowElements;
 		
-		url="http://www.yes24.com/searchcorner/Search?keywordAd=&keyword=&domain=ALL&qdomain="
-				+ "%C0%FC%C3%BC&Wcode=001_005&query="+URLEncoder.encode(search,"euc-kr");
+		// selector
+		// #schMid_wrap > div:nth-child(3)
 		
-		System.out.println(url);
+		url = "http://www.yes24.com/searchcorner/Search?keywordAd=&keyword=&domain=ALL&qdomain=%C0%FC%C3%BC&Wcode=001_005&query=" + URLEncoder.encode(search, "euc-kr");
+		System.out.println(url);  // 확인용
 		
+		doc = Jsoup.connect(url).execute().parse();
 		
+		rowElements = doc.select("#schMid_wrap > div.goods_list_wrap.mgt30").get(0).select("tr:nth-child(odd)"); 
 		
-		doc=Jsoup.connect(url).execute().parse();
-		
-		rowElements=doc.select("#schMid_wrap>div.goods_list_wrap.mgt30").get(0).select("tr:nth-child(odd)");
-		System.out.println(rowElements.size()+"개"); //확인용
+		System.out.println(rowElements.size() + "개");  // 확인용
 		
 		for(Element e : rowElements) {
 			
@@ -101,15 +99,12 @@ public class Crawl05Main {
 			double price = Double.parseDouble(
 					e.selectFirst("td.goods_infogrp > div.goods_price > em.yes_b").text().trim().replace(",", "")
 				);
-			System.out.println(price + "원"); //확인용
+			// System.out.println(price + "원");  // 확인용
 			
+			list.add(new InfoBook(bookTitle, price, linkUrl, imgUrl));
 			
-			list.add(new Infobook(bookTitle, price, linkUrl, imgUrl));
 		}
 		
-		
-		//selector
-		//#schMid_wrap > div:nth-child(3) > div.goodsList.goodsList_list
 		
 		return list;
 	}
@@ -117,3 +112,17 @@ public class Crawl05Main {
 	
 	
 } // end class
+
+
+
+
+
+
+
+
+
+
+
+
+
+

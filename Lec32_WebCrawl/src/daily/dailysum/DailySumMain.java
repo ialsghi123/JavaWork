@@ -1,11 +1,9 @@
 package daily.dailysum;
 
 import java.io.IOException;
-import java.net.URLEncoder;
-import java.util.ArrayList;
+import java.net.URL;
+import java.util.List;
 import java.util.Scanner;
-
-import javax.sound.sampled.Port.Info;
 
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
@@ -14,6 +12,8 @@ import org.jsoup.parser.Parser;
 import org.jsoup.select.Elements;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.databind.ObjectMapper;
 
 /*
  * 연습 : 자치구단위 서울 생활인구 일별 집계표
@@ -67,133 +67,134 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 // XML 은 Jsoup 를 활용하여 파싱하세요
 // JSON 은  jackson 을 활용하여 파싱하세요
 
+// By. 이예지.
 public class DailySumMain {
 
-	public static final String REQ_SERVICE = "SPOP_DAILYSUM_JACHI";
-	public static final String API_KEY = "584a746b5369616c38314978427758";
+	public static final String API_KEY = "너의 키값은?";
 
 	public static void main(String[] args) throws IOException {
-
-		System.out.println("자치구 단위 서울 생활인구 일별 집계표");
-
 		Scanner sc = new Scanner(System.in);
-		String date;
-		int startIndex;
-		int endIndex;
-
-		System.out.print("날짜입력:");
-		date = sc.nextLine();
-		System.out.print("시작Index:");
-		startIndex = sc.nextInt();
-		System.out.print("끝Index:");
-		endIndex = sc.nextInt();
-
-		String url = buildUrlAddress("xml", startIndex,endIndex,date);
-
+		
+		//입력
+		System.out.print("날짜입력 :");
+		String date = sc.nextLine();
+		System.out.print("시작Index :");
+		int startIndex = sc.nextInt();
+		System.out.print("끝Index : ");
+		int endIndex = sc.nextInt();
+		sc.close();
+		
+		
+		System.out.println("[XML]");
+		System.out.println("날짜              구ID    총생활인구수              일최대이동인구수");
+		System.out.println("------------------------------------------------------------");
+		String url = buildUrlAddress("xml", startIndex, endIndex, date); // url
+		
 		Document doc = Jsoup.connect(url).parser(Parser.xmlParser()).get();
 		Elements elements = doc.select("row");
-
-		for (Element e : elements) {
-			String STDR_DE_ID = e.selectFirst("STDR_DE_ID").text().trim();
-			String SIGNGU_CODE_SE = e.selectFirst("SIGNGU_CODE_SE").text().trim();
-			String TOT_LVPOP_CO = e.selectFirst("TOT_LVPOP_CO").text().trim();
-			String DAIL_MXMM_MVMN_LVPOP_CO = e.selectFirst("DAIL_MXMM_MVMN_LVPOP_CO").text().trim();
-			System.out.printf("%s        %s       %s       %s\n", STDR_DE_ID, SIGNGU_CODE_SE, TOT_LVPOP_CO,
-					DAIL_MXMM_MVMN_LVPOP_CO);
+		
+		//  날짜             구ID        총생활인구수           일최대이동인구수
+		for(Element e : elements) {
+			
+			String guID= e.selectFirst("SIGNGU_CODE_SE").text().trim();  // 구ID
+			String totalLPN = e.selectFirst("TOT_LVPOP_CO").text().trim(); // 총 생활 인구 수
+			String dailyMaxMPN = e.selectFirst("DAIL_MXMM_MVMN_LVPOP_CO").text().trim();  // 일일 최대 이동 인구 수
+			
+			System.out.println(String.format("%s %5s \t%s \t%s", date, guID, totalLPN, dailyMaxMPN));
 		}
 		
 		
+		System.out.println("\n[JSON]");
+		System.out.println("날짜              구ID    총생활인구수              일최대이동인구수");
+		System.out.println("------------------------------------------------------------");
 		
+//		url = buildUrlAddress("json", startIndex, endIndex, date); // JsonParseException  -> String : 문자열로 json 읽어들여서 파싱해야함.
+		URL url1 = new URL(buildUrlAddress("json", startIndex, endIndex, date)); // 해당 웹주소 받아서 josn 파싱
+		
+		ObjectMapper mapper = new ObjectMapper();
+		SeoulLP seoulLP = mapper.readValue(url1, SeoulLP.class);
+		
+		
+		for(Row e : seoulLP.getJachiGuDailySum().getRow()) {
+			System.out.println(String.format("%s %5s \t%s \t%s", date, 
+					e.getGuID(), // 구ID
+					e.getTotalLPN(), // 총 생활 인구 수
+					e.getDailyMaxMPN())); 
+		}
 		
 		
 	} // end main
-
-	public static String buildUrlAddress(String reqType, int startIndex, int endIndex, String date) throws IOException {
-
-		String url_address = String.format("http://openapi.seoul.go.kr:8088/%s/xml/SPOP_DAILYSUM_JACHI/%d/%d/%s",
-				API_KEY, startIndex, endIndex,date);
-
-		return url_address;
-
-	}// end buildUrlAddress()
 	
+	public static String buildUrlAddress(String reqType, int startIndex, int endIndex, String date) throws IOException {
+		
+			String url_address = String.format("http://openapi.seoul.go.kr:8088/%s/%s/SPOP_DAILYSUM_JACHI/%d/%d/%s/", 
+				API_KEY, reqType, startIndex, endIndex, date);
+			
+			return url_address;
+		}
 	
 } // end class
 
 @JsonIgnoreProperties(ignoreUnknown = true)
-class Population{
-	private ArrayList<Info> PopulationList;
-	
-	public ArrayList<Info> getPopulatList() {
-		return PopulationList;
-	}
-	
-	public Population() {}
+class SeoulLP{
+	@JsonProperty("SPOP_DAILYSUM_JACHI")
+	private JachiGuDailySum jachiGuDailySum;
 
-	public ArrayList<Info> getPopulationList() {
-		return PopulationList;
-	}
+	public SeoulLP() {}
+	
+	public JachiGuDailySum getJachiGuDailySum() {return jachiGuDailySum;}
+	public void setJachiGuDailySum(JachiGuDailySum jachiGuDailySum) {this.jachiGuDailySum = jachiGuDailySum;}
+} // end class
 
-	public void setPopulationList(ArrayList<Info> populationList) {
-		PopulationList = populationList;
-	}
-	
-	
-}
 
 @JsonIgnoreProperties(ignoreUnknown = true)
-
-class info{
-	private String STDR_DE_ID;
-	private String SIGNGU_CODE_SE;
-	private String TOT_LVPOP_COD;
-	private String DAIL_MXMM_MVMN_LVPOP_CO;
+class JachiGuDailySum{
 	
-	public info() {}
+	private List<Row> row;
 
-	public info(String sTDR_DE_ID, String sIGNGU_CODE_SE, String tOT_LVPOP_COD, String dAIL_MXMM_MVMN_LVPOP_CO) {
+	public List<Row> getRow() {return row;}
+	public void setRow(List<Row> row) {this.row = row;}
+}// end class
+
+
+@JsonIgnoreProperties(ignoreUnknown = true)
+class Row{
+	@JsonProperty("SIGNGU_CODE_SE")
+	private String guID;
+	@JsonProperty("TOT_LVPOP_CO")
+	private String totalLPN;
+	@JsonProperty("DAIL_MXMM_MVMN_LVPOP_CO")
+	private String dailyMaxMPN;
+	
+	
+	public Row() {}
+	
+	public Row(String guID, String totalLPN, String dailyMaxMPN) {
 		super();
-		STDR_DE_ID = sTDR_DE_ID;
-		SIGNGU_CODE_SE = sIGNGU_CODE_SE;
-		TOT_LVPOP_COD = tOT_LVPOP_COD;
-		DAIL_MXMM_MVMN_LVPOP_CO = dAIL_MXMM_MVMN_LVPOP_CO;
-	}
-
-	public String getSTDR_DE_ID() {
-		return STDR_DE_ID;
-	}
-
-	public void setSTDR_DE_ID(String sTDR_DE_ID) {
-		STDR_DE_ID = sTDR_DE_ID;
-	}
-
-	public String getSIGNGU_CODE_SE() {
-		return SIGNGU_CODE_SE;
-	}
-
-	public void setSIGNGU_CODE_SE(String sIGNGU_CODE_SE) {
-		SIGNGU_CODE_SE = sIGNGU_CODE_SE;
-	}
-
-	public String getTOT_LVPOP_COD() {
-		return TOT_LVPOP_COD;
-	}
-
-	public void setTOT_LVPOP_COD(String tOT_LVPOP_COD) {
-		TOT_LVPOP_COD = tOT_LVPOP_COD;
-	}
-
-	public String getDAIL_MXMM_MVMN_LVPOP_CO() {
-		return DAIL_MXMM_MVMN_LVPOP_CO;
-	}
-
-	public void setDAIL_MXMM_MVMN_LVPOP_CO(String dAIL_MXMM_MVMN_LVPOP_CO) {
-		DAIL_MXMM_MVMN_LVPOP_CO = dAIL_MXMM_MVMN_LVPOP_CO;
+		this.guID = guID;
+		this.totalLPN = totalLPN;
+		this.dailyMaxMPN = dailyMaxMPN;
 	}
 	
-	
-}
-
+	public String getGuID() {
+		return guID;
+	}
+	public void setGuID(String guID) {
+		this.guID = guID;
+	}
+	public String getTotalLPN() {
+		return totalLPN;
+	}
+	public void setTotalLPN(String totalLPN) {
+		this.totalLPN = totalLPN;
+	}
+	public String getDailyMaxMPN() {
+		return dailyMaxMPN;
+	}
+	public void setDailyMaxMPN(String dailyMaxMPN) {
+		this.dailyMaxMPN = dailyMaxMPN;
+	}
+}// end class
 
 
 

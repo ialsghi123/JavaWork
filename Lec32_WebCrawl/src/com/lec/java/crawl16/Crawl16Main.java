@@ -119,13 +119,8 @@ public class Crawl16Main {
 class Yogiyo {
 	private List<Restaurant> restaurants;
 
-	public List<Restaurant> getRestaurants() {
-		return restaurants;
-	}
-
-	public void setRestaurants(List<Restaurant> restaurants) {
-		this.restaurants = restaurants;
-	}
+	public List<Restaurant> getRestaurants() {return restaurants;}
+	public void setRestaurants(List<Restaurant> restaurants) {this.restaurants = restaurants;}
 	
 	@Override
 	public String toString() {
@@ -144,27 +139,24 @@ class Restaurant {
 	@JsonProperty("review_avg")
 	private double reviewAvg;
 
-	public String getName() {
-		return name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-	}
-
-	public double getReviewAvg() {
-		return reviewAvg;
-	}
-
-	public void setReviewAvg(double reviewAvg) {
-		this.reviewAvg = reviewAvg;
-	}
-	
+	public String getName() {return name;}
+	public void setName(String name) {this.name = name;}
+	public double getReviewAvg() {return reviewAvg;}
+	public void setReviewAvg(double reviewAvg) {this.reviewAvg = reviewAvg;}
 	@Override
 	public String toString() {
 		return String.format("%s %.1f", name, reviewAvg);
 	}
 }
+
+
+
+
+
+
+
+
+
 
 
 

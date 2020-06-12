@@ -1,10 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+
 <html>
 <head>
 	<title>상단 영역</title>
 	
-	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="CSS/bootstrap_min.css">
 	
 	<style type="text/css">
 		#wrap{
@@ -38,31 +40,45 @@
 			{
 				location.href="MemberInfoAction.do";
 			}
+			else if(value == "5")
+			{
+				location.href="MemberListAction.do";		
+			}
+			else if(value == "6")
+            {
+                location.href="BoardListForm.bo";
+            }
+
+
 		}
 	</script>
 	
 </head>
 <body>
 	<div id = "wrap">
-		<p>
-			<button class="btn btn-success" onclick="changeView(0)">HOME</button>
-		<%
-			// 로그인 안되었을 경우 - 로그인, 회원가입 버튼을 보여준다.
-			if(session.getAttribute("sessionID")==null){ 
-		%>
-			<button id="loginBtn" class="btn btn-primary" onclick="changeView(1)">로그인</button>
-			<button id="joinBtn" class="btn btn-primary" onclick="changeView(2)">회원가입</button>
-			
-		<%
-			// 로그인 되었을 경우 - 로그아웃, 내정보 버튼을 보여준다.
-			}else{ 
-		%>
-			<button id="logoutBtn" class="btn btn-primary" onclick="changeView(3)">로그아웃</button>
-			<button id="updateBtn" class="btn btn-primary" onclick="changeView(4)">내정보</button>
-		<%	}	%>	
-
-			<button id="memberViewBtn" class="btn btn-warning">회원보기</button>
-		</p>
+        <p>
+            <button class="btn btn-success" onclick="changeView(0)">HOME</button>
+ 
+        <!-- // 로그인 안되었을 경우 - 로그인, 회원가입 버튼을 보여준다. -->
+        <c:if test="${sessionScope.sessionID==null}">
+            <button id="loginBtn" class="btn btn-primary" onclick="changeView(1)">로그인</button>
+            <button id="joinBtn" class="btn btn-primary" onclick="changeView(2)">회원가입</button>
+        </c:if>
+ 
+        <!-- // 로그인 되었을 경우 - 로그아웃, 내정보 버튼을 보여준다. -->
+        <c:if test="${sessionScope.sessionID!=null}">
+            <button id="logoutBtn" class="btn btn-primary" onclick="changeView(3)">로그아웃</button>
+            <button id="updateBtn" class="btn btn-primary" onclick="changeView(4)">내정보</button>
+        </c:if> 
+        
+            <button id="joinBtn" class="btn btn-info" onclick="changeView(6)">게시판</button>
+       
+        <!--  관리자 로그인 -->
+        <c:if test="${sessionScope.sessionID !=null && sessionScope.sessionID=='admin'}">
+            <button id="memberViewBtn" class="btn btn-warning" onclick="changeView(5)">회원보기</button>
+        </c:if>
+                
+        </p>
 	</div>
 </body>
 </html>

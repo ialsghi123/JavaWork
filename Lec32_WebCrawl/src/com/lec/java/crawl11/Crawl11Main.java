@@ -117,7 +117,7 @@ public class Crawl11Main {
 				conn.setUseCaches(false);  // 캐시사용안함
 				
 				System.out.println("request 시작: " + urlAddress);
-				conn.connect();    // request 발생 --> 이후 response 받을때까지 delay 
+				conn.connect();    // request 발생 --> 이후 response 받을때까지 delay
 				System.out.println("response 완료");
 				
 				// response 받은후 가장 먼저 response code 값 확인
@@ -169,7 +169,7 @@ public class Crawl11Main {
 
         try {
             // DOM parser 객체 생성
-            dbFactory = DocumentBuilderFactory.newInstance(); 
+            dbFactory = DocumentBuilderFactory.newInstance();
             dBuilder = dbFactory.newDocumentBuilder();
             
             // String -> InputStream 변환
@@ -244,6 +244,14 @@ public class Crawl11Main {
 	} // end parseJSON()
 
 } // end class
+
+
+
+
+
+
+
+
 
 
 

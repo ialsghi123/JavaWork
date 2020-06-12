@@ -24,44 +24,40 @@ public class DateTime02Main {
 		System.out.println("Calendar객체로 날짜 다루기");
 		
 		//  특별한 역법을 쓰지 않는 경우.  우리나라 서력 사용.
-		Calendar cal= Calendar.getInstance();
-		
-		
+		Calendar cal = Calendar.getInstance();
 		System.out.println("get() 으로 날짜/시간 받아오기");
 		System.out.println("현재:");
+		// get(int field)
+		printDate(cal);	
 		
-		printDate(cal);
 
 		System.out.println();
 		System.out.println("TimeZone");
-		
-		TimeZone timeZone=TimeZone.getTimeZone("America/Los_Angeles");
-		cal=Calendar.getInstance(timeZone); //매개변수 TimeZone!
+		TimeZone timeZone = TimeZone.getTimeZone("America/Los_Angeles");
+		cal = Calendar.getInstance(timeZone);  // 매개변수 TimeZone!
 		printDate(cal);
 
 		
 		System.out.println();
+		System.out.println("시간대 문자열들");
 		// 시간대 문자열들 획득
-		String[] availableIDs=TimeZone.getAvailableIDs();
-		for(String id:availableIDs) {
+		String [] availableIDs = TimeZone.getAvailableIDs();
+		for(String id : availableIDs) {
 			System.out.println(id);
 		}
 		
 		
 		System.out.println();
 		System.out.println("Date ↔ Calendar 변환");
-		// 상호간에 변환할 일이 생긴다..
 		
 		// 1-1. Calendar -> Date
-
-		cal=Calendar.getInstance();
-		Date date=cal.getTime();
+		cal = Calendar.getInstance();
+		Date date = cal.getTime();
 		System.out.println(new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(date));
 		
 		// 1-2 Calendar -> Date
-		date=new Date(cal.getTimeInMillis());
+		date = new Date(cal.getTimeInMillis());
 		System.out.println(new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(date));
-		
 		
 		// 2. Date -> Calendar
 		cal.setTime(date);
@@ -73,12 +69,11 @@ public class DateTime02Main {
 		// Locale 값을 설정하면 특정 지역 시각을 알수 있습니다.
 		System.out.println();
 		System.out.println("GregorianCalendar 사용");
-		GregorianCalendar gregCal =new GregorianCalendar();
+		GregorianCalendar gregCal = new GregorianCalendar();
 		printDate(gregCal);
-		
-		int year=2021;
-		System.out.println(year+"는 윤년?"+gregCal.isLeapYear(year));
 
+		int year = 2020;
+		System.out.println(year + " 는 윤년? " + gregCal.isLeapYear(year));
 		
 	} // end main()
 	
@@ -93,7 +88,7 @@ public class DateTime02Main {
 		int hour = now.get(Calendar.HOUR);
 		int minute = now.get(Calendar.MINUTE);
 		int second = now.get(Calendar.SECOND);
-
+		
 		String strWeek = null;
 		switch(week) {
 		case Calendar.MONDAY:
@@ -117,8 +112,6 @@ public class DateTime02Main {
 		case Calendar.SUNDAY:
 			strWeek = "일";
 			break;
-			
-			
 		}
 		
 		String strAmPm = null;
@@ -134,10 +127,21 @@ public class DateTime02Main {
 		
 		System.out.println(year + "-" + month + "-" + day + " " + strWeek);
 		System.out.println(strAmPm + " " + hour + ":" + minute + ":" + second);
-
-
-
+		
 	} // end printDate()
 	
 	
 } // end class
+
+
+
+
+
+
+
+
+
+
+
+
+

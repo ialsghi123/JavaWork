@@ -22,6 +22,5 @@ CREATE TABLE jsp_member
 	PRIMARY KEY (id)
 );
 
-SELECT * FROM JSP_MEMBER;
 
 

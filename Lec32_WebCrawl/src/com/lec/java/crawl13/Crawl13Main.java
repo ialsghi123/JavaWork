@@ -22,7 +22,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
  * 	3.Data Binding : POJO 기반의 자바 객체들을 JSON으로 변환시킬 수 있습니다.
  * 
  * Maven 설정
- * 	jackson-databind 라이브러리는 jackson-core 및 jackson-annotation 라이브러리의 의존존성을 포함하기 때문에 메이븐을 사용하는 경우 jackson-databind 라이브러리만 추가해주시면 됩니다.
+ * 	jackson-databind 라이브러리는 jackson-core 및 jackson-annotation 라이브러리의 의존성을 포함하기 때문에 메이븐을 사용하는 경우 jackson-databind 라이브러리만 추가해주시면 됩니다.
  * 
  * MVNrepository :  v 2.10.2
  * 	https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-databind
@@ -33,14 +33,6 @@ import com.fasterxml.jackson.databind.ObjectMapper;
  * 	JS 의 배열  ↔ Java 의 List<>
  * 	JS 의 object ↔ Java 의 객체(Class)
  * 
- * 
- * HTML/XML : Document Object Model (DOM) 파싱 방법
- *           -->Jsoup (외부 라이브러리)
- *           -->w3c.org 사용(기본)
- *           
- * JSON 파싱 방법
- *         -->json.org
- *         -->jackson-databind... 
  */
 public class Crawl13Main {
 
@@ -102,9 +94,6 @@ public class Crawl13Main {
 			System.out.println(user1);
 			
 			
-			
-			
-			
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
@@ -112,40 +101,6 @@ public class Crawl13Main {
 	}
 	
 } // end class
-
-@JsonIgnoreProperties(ignoreUnknown = true)
-class Subway{
-	private Stats CardSubwayStatsNew;
-
-	public Stats getCardSubwayStatsNew() {
-		return CardSubwayStatsNew;
-	}
-
-	public void setCardSubwayStatsNew(Stats cardSubwayStatsNew) {
-		this.CardSubwayStatsNew = cardSubwayStatsNew;
-	}
-}
-
-@JsonIgnoreProperties(ignoreUnknown = true)
-class Stats {
-	
-	private int list_total_count;
-
-	public int getList_total_count() {
-		return list_total_count;
-	}
-
-	public void setList_total_count(int list_total_count) {
-		this.list_total_count = list_total_count;
-	}
-}
-
-
-// Retrofit
-// Volley
-
-
-
 
 
 

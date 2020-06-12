@@ -1,4 +1,8 @@
 package com.lec.java.url;
+
+import java.net.MalformedURLException;
+import java.net.URL;
+
 /* URL (Uniform Resource Locator) 객체
  *  java.net.URL 객체를 통해  인터넷 관련 리소스 접근.
  *  
@@ -16,10 +20,6 @@ package com.lec.java.url;
  *  
  *  URI (Uniform Resource Identifier) 는 URL 의 상위 개념
  */
-
-import java.net.MalformedURLException;
-import java.net.URL;
-
 public class UrlMain {
 
 	public static void main(String[] args) {
@@ -36,12 +36,12 @@ public class UrlMain {
 		
 		for (int i = 0; i < urls.length; i++) {
 			System.out.println(urls[i]);
-			URL url=null;
+			URL url = null;   
 			
 			try {
-				url=new URL(urls[i]);
+				url = new URL(urls[i]);
 			} catch (MalformedURLException e) {
-				System.out.println("\t잘못된 url 입니다"+e.getMessage());
+				System.out.println("\t 잘못된 url 입니다 " + e.getMessage());
 				continue;
 			}
 			
@@ -52,24 +52,32 @@ public class UrlMain {
 			System.out.println("\tgetFile(): " + url.getFile());
 			System.out.println("\tgetQuery(): " + url.getQuery());			
 			
-			//파일명,확장자
-			if(url.getPath().length()>0) {
-				String filename=url.getPath().substring(url.getPath().lastIndexOf('/')+1);
-				String fileBaseName=
-						filename.substring(0,filename.lastIndexOf('.'));
-				String fileExt=
-						filename.substring(filename.lastIndexOf('.')+1);
+			// 파일명, 확장자
+			if(url.getPath().length() > 0) {
+				String filename = url.getPath().substring(url.getPath().lastIndexOf('/') + 1);
+				String fileBaseName = 
+						filename.substring(0, filename.lastIndexOf('.'));
+				String fileExt =
+						filename.substring(filename.lastIndexOf('.') + 1);
 				
-				System.out.println("\t파일명:"+filename);
-				System.out.println("\t파일base명:"+fileBaseName);
-				System.out.println("\t파일확장자:"+fileExt);
-			
+				System.out.println("\t파일명: " + filename);
+				System.out.println("\t파일base명: " + fileBaseName);
+				System.out.println("\t파일확장자: " + fileExt);
 			}
 			
-		}//end for
+		} // end for
+		
+		
+		
+	} // end main()
+
+} // end class
 
 
 
-	}//end main()
 
-}//end class
+
+
+
+
+

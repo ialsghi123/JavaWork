@@ -12,37 +12,44 @@ public class Crawl02Main {
 
 	public static void main(String[] args) throws IOException {
 		System.out.println("네이트 인기 검색어");
-		
-		//www.nate.com
+
+		// www.nate.com
 		
 		String url;
+		Document doc; 
 		Response response;
-		Document doc;
 		Element element;
-		
-		url="https://www.nate.com";
-		response=Jsoup.connect(url).execute();
-		
-		System.out.println(response.statusCode());
-		System.out.println(response.statusMessage());
-		
-		doc=response.parse();
-		
-		String outerHtml=doc.outerHtml();
-		System.out.println(outerHtml.substring(0,200));
-		
-		System.out.println("네이트 실시간 검색어");
-		
-		
-		
-		
-	
-		
-		
-		
-		
 
+		url = "https://www.nate.com";
+		response = Jsoup.connect(url).execute();		
+		System.out.println(response.statusCode());
+		doc = response.parse();
+		
+		Elements search_elements = doc.select(".search_keyword dd a");
+		System.out.println(search_elements.size() + "개");
+		
+		for(Element e : search_elements) {
+			System.out.println(e.text().trim());
+			System.out.println(e.attr("href").trim());
+		}
+		
 		System.out.println("\n프로그램 종료");
 	}
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

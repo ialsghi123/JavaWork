@@ -26,7 +26,7 @@ public class NaverMovie {
 		//System.out.println(elements.size());
 		
 		for(Element e : elements) {
-			e.selectFirst("span.blind").remove();
+			e.selectFirst("span.blind").remove(); // 1위, 2위... 텍스트 <span> 없애려면 해당 element 삭제 (remove())
 			System.out.println(e.text().trim());
 		}
 		
@@ -35,4 +35,11 @@ public class NaverMovie {
 	}
 
 }
+
+
+
+
+
+
+
 

@@ -45,7 +45,7 @@ public class Crawl01Main {
 //		200 성공
 //		404 url 존재하지 않음
 //		500 서버 내부 
-//		400 Bad Request : request 문법상상의 오류
+//		400 Bad Request : request 문법상의 오류
 //		401 권한에러 : 권한 관현 적절한 header 정보가 없는 경우 많이 발생
 //		402 권한에러 : 자원에 대한 접근 권한 에러
 //		403  권한에러 Forbidden : 파일권한, 읽기권한, SSL, IP, 등...  <--- 웹 크롤링 하다가 은근히 자주 마주치게 되는 에러
@@ -65,7 +65,7 @@ public class Crawl01Main {
 		System.out.println("[네이버 뉴스 캐스트]");
 		
 		element = doc.selectFirst("#news_cast");  // 검색된 Element 들 중 최초 1개만 Element 로 리턴 
-//		System.out.println(element.outerHtml());
+		//System.out.println(element.outerHtml());
 		
 		Elements newsElements = doc.select("#news_cast li.ca_item");  // 검색된 Element 들이 담겨 있는 Elements 리턴
 		
@@ -84,6 +84,15 @@ public class Crawl01Main {
 	} // end main()
 
 } // end class
+
+
+
+
+
+
+
+
+
 
 
 

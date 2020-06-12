@@ -35,8 +35,6 @@ import org.xml.sax.SAXException;
  * JSON 버젼
  * http://openapi.seoul.go.kr:8088/키값을넣으세요/json/CardSubwayStatsNew/1/5/20181001
  * 예) http://openapi.seoul.go.kr:8088/4d46796d7366726f3833774a774955/json/CardSubwayStatsNew/1/5/20181001 
- * 
- * 
  * */
 
 /* JSON 파싱
@@ -44,13 +42,11 @@ java.io.Reader    프로그램이 '문자 단위' 데이터를 읽어들이는(r
 	├─ java.io.InputStreamReader    // 스트림 기반의 reader
  	└─ java.io.BufferedReader 		// 문자(character) 기반 reader
  */
-
-
 public class Crawl10Main {
 	
-	public static final String REQ_SERVICE="CardSubwayStatsNew";
-	public static final String API_KEY="584a746b5369616c38314978427758";
-
+	public static final String REQ_SERVICE = "CardSubwayStatsNew";
+	public static final String API_KEY = "4d46796d7366726f3833774a774955"; // 너의 key 값은?
+	
 	public static void main(String[] args) {
 		System.out.println("서울시 지하철호선별 역별 승하차 인원 정보");
 
@@ -233,29 +229,38 @@ public class Crawl10Main {
 		JSONObject jObj = new JSONObject(jsonText);  // JSON파싱 : JSONObject <- String 
 		JSONArray row = jObj.getJSONObject("CardSubwayStatsNew").getJSONArray("row");
 		
-		System.out.println("row 의 개수: " + row.length()); 
+		System.out.println("row 의 개수: " + row.length());
+		System.out.println();
 		
-		for(int i=0; i<row.length(); i++) {
-			JSONObject station=row.getJSONObject(i);
+		for(int i = 0; i < row.length(); i++) {
+			JSONObject station = row.getJSONObject(i);
 			
-			String LINE_NUM=station.getString("LINE_NUM");
-			String SUB_STA_NM=station.getString("SUB_STA_NM");
-			int RIDE_PASGR_NUM=station.getInt("RIDE_PASGR_NUM");
+			String LINE_NUM = station.getString("LINE_NUM");
+			String SUB_STA_NM = station.getString("SUB_STA_NM");
+			int RIDE_PASGR_NUM = station.getInt("RIDE_PASGR_NUM");
 			int ALIGHT_PASGR_NUM = station.getInt("ALIGHT_PASGR_NUM");
 			
-			System.out.printf("%5s:%8s역 [승차:%6d 하차:%6d]\n",
-					LINE_NUM,SUB_STA_NM,RIDE_PASGR_NUM,ALIGHT_PASGR_NUM);
+			System.out.printf("%5s : %8s역 [승차:%6d 하차:%6d]\n", 
+					LINE_NUM, SUB_STA_NM, RIDE_PASGR_NUM, ALIGHT_PASGR_NUM);
 			
 		}
-		
-		
-		
-		
 		
 		
 	} // end parseJSON()
 
 } // end class
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

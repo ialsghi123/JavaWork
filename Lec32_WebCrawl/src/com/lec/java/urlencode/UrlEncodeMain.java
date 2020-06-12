@@ -1,4 +1,9 @@
 package com.lec.java.urlencode;
+
+import java.io.UnsupportedEncodingException;
+import java.net.URLDecoder;
+import java.net.URLEncoder;
+
 /*  URLEncoder, URLDecoder
  * 
  * URL 은  한글, 특수기호, 공백등의 문자를 담을수 없다.
@@ -11,11 +16,6 @@ package com.lec.java.urlencode;
  * 	http://coderstoolbox.net/string/#!encoding=xml&action=encode&charset=us_ascii
  * 
  */
-
-import java.io.UnsupportedEncodingException;
-import java.net.URLDecoder;
-import java.net.URLEncoder;
-
 public class UrlEncodeMain {
 
 	public static void main(String[] args) {
@@ -28,32 +28,37 @@ public class UrlEncodeMain {
 			"euc-kr", "ksc5601", "cp949", "ms949", // 한글 표현 -> 2byte
 			"iso-8859-1", "8859_1", "ascii",   // 한글 불가
 			"UTF-8",   // 한글표현 -> 3byte
-			
 		};
 		
 		for (int i = 0; i < charset.length; i++) {
+			
 			try {
-				//문자열->URL 인코딩
-				System.out.printf("%11s->%s\n",charset[i],
-						URLEncoder.encode(str,charset[i]));
+				// 문자열 -> URL 인코딩
+				System.out.printf("%11s → %s\n", charset[i], 
+						URLEncoder.encode(str, charset[i]));
 				
 			} catch (UnsupportedEncodingException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 		}
+
 		System.out.println();
-		String enc_utf8="%ED%8C%8C%EC%9D%B4%EC%8D%AC";
+		String enc_utf8 = "%ED%8C%8C%EC%9D%B4%EC%8D%AC";
 		
 		try {
-			System.out.println(URLDecoder.decode(enc_utf8,"UTF-8"));
-			System.out.println(URLDecoder.decode(enc_utf8,"euc-kr"));
+			System.out.println(URLDecoder.decode(enc_utf8, "UTF-8"));
+			System.out.println(URLDecoder.decode(enc_utf8, "euc-kr"));
 		} catch (UnsupportedEncodingException e) {
-			
 			e.printStackTrace();
 		}
+		
+		
+	} // end main()
+
+} // end class
 
 
-	}
 
-}
+
+
+

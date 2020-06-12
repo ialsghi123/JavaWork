@@ -4,6 +4,10 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.databind.ObjectMapper;
+
 /* XML, Json 파싱1
  * 
  * ■서울시 지하철호선별 역별 승하차 인원 정보 
@@ -17,54 +21,38 @@ import java.util.List;
  * JSON 버젼
  * http://openapi.seoul.go.kr:8088/키값을넣으세요/json/CardSubwayStatsNew/1/5/20181001
  * 예) http://openapi.seoul.go.kr:8088/4d46796d7366726f3833774a774955/json/CardSubwayStatsNew/1/5/20181001 
- * 
- * 
  * */
-
-/* JSON 파싱
-java.io.Reader    프로그램이 '문자 단위' 데이터를 읽어들이는(read) 통로
-	├─ java.io.InputStreamReader    // 스트림 기반의 reader
- 	└─ java.io.BufferedReader 		// 문자(character) 기반 reader 
- */                                                                 
-
-
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.databind.ObjectMapper;
-
-
 
 public class Crawl14Main {
 
 	public static void main(String[] args) throws IOException {
-		System.out.println("jackson-databind 연습");
-		
+		System.out.println("jackson-databind 연습 : URL -> json -> Java");
+
 		ObjectMapper mapper = new ObjectMapper();
 		
-		URL url=new URL("http://openapi.seoul.go.kr:8088/4d46796d7366726f3833774a774955/json/CardSubwayStatsNew/1/5/20181001 ");
+		URL url = new URL("http://openapi.seoul.go.kr:8088/4d46796d7366726f3833774a774955/json/CardSubwayStatsNew/1/5/20181001");
 		
 		Subway subway = mapper.readValue(url, Subway.class);
+		
 		System.out.println(subway.getCardSubwayStatsNew().getList_total_count());
 		
-		for(SubRow e:subway.getCardSubwayStatsNew().getRow()) {
-			System.out.printf("%5s:%8s역 [승차:%6d 하차:%6d]\n",
-					e.getLineNum(),
-					e.getStationName(),
-					e.getRidePassenger(),
+		for(SubRow e : subway.getCardSubwayStatsNew().getRow()) {
+			System.out.printf("%5s : %8s역 [승차:%6d 하차:%6d]\n", 
+					e.getLineNum(), 
+					e.getStationName(), 
+					e.getRidePassenger(), 
 					e.getAlightPassenger());
-					
-			
 		}
 		
+		
 		System.out.println("\n프로그램 종료");
+	} // end main()
 
-	}//end main()
-
-}//end class
+} // end class
 
 @JsonIgnoreProperties(ignoreUnknown = true)
 class Subway{
-	public Stats CardSubwayStatsNew;
+	public Stats CardSubwayStatsNew;  // 왜 이것만 public ???
 
 	public Stats getCardSubwayStatsNew() {
 		return CardSubwayStatsNew;
@@ -89,7 +77,7 @@ class Stats {
 	public void setList_total_count(int list_total_count) {
 		this.list_total_count = list_total_count;
 	}
-
+	
 	public List<SubRow> getRow() {
 		return row;
 	}
@@ -98,23 +86,22 @@ class Stats {
 		this.row = row;
 	}
 	
-	
-}
+} // end Stats
 
-//JSON 필드명과 매핑되는 Java 객체의 변수명을 달리 하고 싶다면
-//@JsonProperty 사용
+// JSON 필드명과 매핑되는 Java 객체의 변수명을 달리 하고 싶다면
+// @JsonProperty 사용 
 
 @JsonIgnoreProperties(ignoreUnknown = true)
 class SubRow {
 	
-	@JsonProperty("LINE_NUM") //JSON의 LINE_NUM-->lineNum 으로 매핑
+	@JsonProperty("LINE_NUM")   // JSON 의 LINE_NUM --> lineNum 으로 매핑
 	private String lineNum;
 	
 	@JsonProperty("SUB_STA_NM")
 	private String stationName;
 	
 	@JsonProperty("RIDE_PASGR_NUM")
-	private int ridePassenger; //탑승인원
+	private int ridePassenger;   // 탑승인원
 	
 	@JsonProperty("ALIGHT_PASGR_NUM")
 	private int alightPassenger;
@@ -130,6 +117,7 @@ class SubRow {
 		this.ridePassenger = ridePassenger;
 		this.alightPassenger = alightPassenger;
 	}
+
 
 	public String getLineNum() {
 		return lineNum;
@@ -164,13 +152,30 @@ class SubRow {
 	}
 	
 	
-	
-		
-	
-	
-}//end subRow
+} // end SubRow
 
 
-//Retrofit
-//Volley
+
+// Retrofit
+// Volley
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
