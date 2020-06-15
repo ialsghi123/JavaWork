@@ -190,7 +190,7 @@ public class AjaxListCommand implements Command {
 			list.setList(Arrays.asList(dtoArr));
 		}
 
-		XmlMapper mapper = new XmlMapper(); // XML 매핑할 Mapper 객체
+		XmlMapper mapper = new XmlMapper(); // XML 매핑할 Mapper 객체//
 		
 		try {
 			// Java --> XML 문자열로 변환

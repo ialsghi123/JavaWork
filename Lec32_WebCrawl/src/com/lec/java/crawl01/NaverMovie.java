@@ -23,12 +23,14 @@ public class NaverMovie {
 		doc = Jsoup.connect(url).execute().parse();
 		
 		elements = doc.select("#assistant > div:nth-child(1) > ul.r_ranking > li > a:first-child");		
-		//System.out.println(elements.size());
+		System.out.println(elements.size());
 		
 		for(Element e : elements) {
 			e.selectFirst("span.blind").remove(); // 1위, 2위... 텍스트 <span> 없애려면 해당 element 삭제 (remove())
 			System.out.println(e.text().trim());
 		}
+		
+		
 		
 		System.out.println("\n프로그램 종료");
 		
