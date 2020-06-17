@@ -13,9 +13,14 @@ public class D {
 	
 	//특정 depth의 특정 parent인 카테고리들 읽어오기
 	public static final String SQL_CATEGORY_BY_DEPTH_N_PARENT
-				=""; //TODO
+				="SELECT ca_uid \"uid\",ca_name name,ca_depth DEPTH,ca_parent parent,ca_order \"order\"" + 
+						"FROM TEST_CATEGORY" + 
+						"WHERE CA_DEPTH = 1" + 
+						"ORDER BY ca_order ASC;"; //TODO
 	
-	//TODO: 필요한 쿼리문 만들어보기
+	
+
+
 	
 
 }

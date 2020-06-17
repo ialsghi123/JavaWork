@@ -50,7 +50,7 @@ public class AjaxController extends HttpServlet {
 		System.out.println("com: " + com);
 		
 		switch(com) {
-		case "/cate_list.ajax":
+		case "/list.ajax":
 			new CateListCommand().execute(request, response);
 			break;
 		}

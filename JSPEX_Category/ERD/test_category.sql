@@ -76,7 +76,50 @@ INSERT INTO test_category VALUES(test_category_seq.nextval, '글러브', 3, 24, 
 
 SELECT ca_uid "uid",ca_name name,ca_depth DEPTH,ca_parent parent,ca_order "order"
 FROM TEST_CATEGORY 
+WHERE CA_DEPTH = 1
+ORDER BY ca_order ASC;
+
+SELECT ca_uid "uid",ca_name name,ca_depth DEPTH,ca_parent parent,ca_order "order"
+FROM TEST_CATEGORY 
 WHERE CA_DEPTH = 2 AND CA_PARENT =1
 ORDER BY ca_order ASC;
 
+SELECT ca_uid "uid",ca_name name,ca_depth DEPTH,ca_parent parent,ca_order "order"
+FROM TEST_CATEGORY 
+WHERE CA_DEPTH = 3 AND CA_PARENT =4
+ORDER BY ca_order ASC;
 
+SELECT ca_uid "uid",ca_name name,ca_depth DEPTH,ca_parent parent,ca_order "order"
+FROM TEST_CATEGORY 
+WHERE CA_DEPTH = 3 AND CA_PARENT =5
+ORDER BY ca_order ASC;
+
+SELECT ca_uid "uid",ca_name name,ca_depth DEPTH,ca_parent parent,ca_order "order"
+FROM TEST_CATEGORY 
+WHERE CA_DEPTH = 3 AND CA_PARENT =6
+ORDER BY ca_order ASC;
+
+SELECT ca_uid "uid",ca_name name,ca_depth DEPTH,ca_parent parent,ca_order "order"
+FROM TEST_CATEGORY 
+WHERE CA_DEPTH = 2 AND CA_PARENT =2
+ORDER BY ca_order ASC;
+
+SELECT ca_uid "uid",ca_name name,ca_depth DEPTH,ca_parent parent,ca_order "order"
+FROM TEST_CATEGORY 
+WHERE CA_DEPTH = 3 AND CA_PARENT =16
+ORDER BY ca_order ASC;
+
+SELECT ca_uid "uid",ca_name name,ca_depth DEPTH,ca_parent parent,ca_order "order"
+FROM TEST_CATEGORY 
+WHERE CA_DEPTH = 3 AND CA_PARENT =17
+ORDER BY ca_order ASC;
+
+SELECT ca_uid "uid",ca_name name,ca_depth DEPTH,ca_parent parent,ca_order "order"
+FROM TEST_CATEGORY 
+WHERE CA_DEPTH = 2 AND CA_PARENT =3
+ORDER BY ca_order ASC;
+
+SELECT ca_uid "uid",ca_name name,ca_depth DEPTH,ca_parent parent,ca_order "order"
+FROM TEST_CATEGORY 
+WHERE CA_DEPTH = 3 AND CA_PARENT =24
+ORDER BY ca_order ASC;
