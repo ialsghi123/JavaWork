@@ -12,13 +12,14 @@ public class D {
 	public static final String USERPW = "tiger0316";
 	
 	//특정 depth의 특정 parent인 카테고리들 읽어오기
-	public static final String SQL_CATEGORY_BY_DEPTH_N_PARENT
-				="SELECT ca_uid \"uid\",ca_name name,ca_depth DEPTH,ca_parent parent,ca_order \"order\"" + 
-						"FROM TEST_CATEGORY" + 
-						"WHERE CA_DEPTH = 1" + 
-						"ORDER BY ca_order ASC;"; //TODO
+	public static final String SQL_CATEGORY_ALL =
+			"SELECT ca_uid \"uid\", ca_name name, ca_depth depth, ca_parent parent, ca_order AS\"order\" FROM test_category";
 	
+	public static final String SQL_CATEGORY_BY_DEPTH = SQL_CATEGORY_ALL +
+			"WHERE ca_depth = ? ORDER BY ca_order ASC";
 	
+	public static final String SQL_CATEGORY_BY_DEPTH_N_PARENT = SQL_CATEGORY_ALL +
+			"WHERE ca_depth = ? AND ca_parent = ? ORDER BY ca_order ASC";
 
 
 	
