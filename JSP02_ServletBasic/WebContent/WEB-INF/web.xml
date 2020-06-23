@@ -15,9 +15,6 @@
   	<servlet-class>com.lec.servlet.HelloServlet</servlet-class>
   </servlet>
   
-  <servlet-mapping>
-  	<servlet-name>helloServlet</servlet-name>
-  	<url-pattern>/hee</url-pattern>
-  </servlet-mapping>
+ 
   
 </web-app>
