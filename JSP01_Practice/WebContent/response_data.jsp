@@ -5,24 +5,25 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Insert title here</title>
+<title>데이터 입력받는곳</title>
 </head>
 <body>
+<%!
+	int age;
+%>
+
 <%
-	int sum = 0;
-	for(int cnt = 1; cnt <=100; cnt++) {
-		sum += cnt;
+	String kname = request.getParameter("age");
+	age=Integer.parseInt(kname);
+
+	if(age>19) {
+		response.sendRedirect("daetul.jsp?age="+age);
+	} else {
+		response.sendRedirect("luckyzzang.jsp?age="+age);
 	}
+	
 %>
 
 
-
-1부터 100까지의 합은 : <%= sum %>
-<hr>
-<h3>오늘의 식단</h3>
-	-비빔밥<br>
-	-볶음밥<br>
-	-스폰지밥<br>
-<%@ include file = "test.jsp" %>
 </body>
 </html>

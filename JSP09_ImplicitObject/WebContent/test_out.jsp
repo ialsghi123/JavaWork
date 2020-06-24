@@ -51,11 +51,15 @@
  
  <%!
  	int q=20;
- 	String str1 = "하하";
+ 	String str1 = "동전을 몇개 던져봐라 나도하";
+ 	String qa="우와아아앙!";
 
  %>
  
- <%=q%>
+ <%=q%><br>
+ <%=str1 %><br>
+ <%=qa %>
+ 
  
 
 </body>

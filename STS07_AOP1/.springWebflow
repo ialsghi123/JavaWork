@@ -3,9 +3,5 @@
 	<version>1</version>
 	<pluginVersion><![CDATA[3.9.13.202005241057-CI-B2488]]></pluginVersion>
 	<configs>
-		<config>
-			<file>src/main/resources/aopCtx1.xml</file>
-			<name><![CDATA[aopCtx1]]></name>
-		</config>
 	</configs>
 </webflow-project-description>

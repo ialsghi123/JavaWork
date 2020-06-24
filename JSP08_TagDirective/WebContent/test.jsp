@@ -3,4 +3,4 @@
     
 <%@ page import = "java.util.*"%>
 <% GregorianCalendar today = new GregorianCalendar(); %>
-<%= String.format("%ty년 %ty월 %td일",today,today,today)  %>
+<%= String.format("%ty년 %tm월 %td일",today,today,today)  %>
