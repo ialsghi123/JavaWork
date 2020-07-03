@@ -107,3 +107,5 @@ hs_err_pid*
 /Lec_WEB/WebContent/img
 /Lec_WEB/WebContent/funweb/images
 /Lec_WEB/WebContent/myweb/myimages
+
+pom.xml

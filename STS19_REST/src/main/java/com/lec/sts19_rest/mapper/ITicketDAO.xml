@@ -10,5 +10,5 @@
 		INSERT INTO test_ticket VALUES (#{param1}, #{param2})
 	</insert>
 
-
+ 
 </mapper>
