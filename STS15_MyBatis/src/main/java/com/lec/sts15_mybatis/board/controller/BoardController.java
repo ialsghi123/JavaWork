@@ -23,10 +23,14 @@ import com.lec.sts15_mybatis.board.command.BWriteCommand;
 public class BoardController {
 	
 	private BCommand command;
-	private JdbcTemplate template;
 	
-	//MyBatis
+	// MyBabatis
 	private SqlSession sqlSession;
+	
+	public BoardController() {
+		super();
+		System.out.println("BoardController() 생성");
+	}
 	
 	@Autowired
 	public void setSqlSession(SqlSession sqlSession) {
@@ -34,18 +38,6 @@ public class BoardController {
 		C.sqlSession = sqlSession;
 	}
 
-	public BoardController() {
-		super();
-		System.out.println("BoardController() 생성");
-	}
-
-	@Autowired
-	public void setTemplate(JdbcTemplate template) {
-		System.out.println("setTemplate() 호출");
-		this.template = template;
-		C.template = template;
-	}
-	
 	@RequestMapping("/list.do")
 	public String list(Model model) {
 		command = new BListCommand();

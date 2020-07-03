@@ -1,8 +1,7 @@
 package com.lec.sts15_mybatis.ticket;
 
-public class ITicketDAO {
-
-	int insertCard(String userId,int buyAmount);
-	int inserTicket(String userId,int ticketCount);
-	int insertTicket(String Id, int ticketCount);
+public interface ITicketDAO {
+	// 아래 2개의 동작이 하나의 트랜잭션으로 처리 되어야 한다!
+	int insertCard(String userId, int buyAmount);
+	int insertTicket(String userId, int ticketCount);
 }
