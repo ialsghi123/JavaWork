@@ -10,7 +10,7 @@ public class BoardController {
 	@RequestMapping(value = "/list")
 	public String listBoard() {
 		return "board/list_board";
-	}
+	}  
 
 	@RequestMapping(value = "/write")
 	public String writeBoard() {
