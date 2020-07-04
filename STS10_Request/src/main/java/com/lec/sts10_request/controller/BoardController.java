@@ -30,6 +30,6 @@ public class BoardController {
 	@RequestMapping(value = "/delete")
 	public String deleteBoard() {
 		return "board/delete_board";
-	}
+	}  
 
 }
