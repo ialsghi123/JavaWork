@@ -24,7 +24,7 @@ public class BoardController {
 
 	@RequestMapping(value = "/update")
 	public String updateBoard() {
-		return "board/update_board";
+		return "board/update_board"; 
 	}
 
 	@RequestMapping(value = "/delete")
