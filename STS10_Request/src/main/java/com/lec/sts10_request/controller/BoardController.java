@@ -15,7 +15,7 @@ public class BoardController {
 	@RequestMapping(value = "/write")
 	public String writeBoard() {
 		return "board/write_board";
-	}
+	} 
 
 	@RequestMapping(value = "/view")
 	public String viewBoard() {
