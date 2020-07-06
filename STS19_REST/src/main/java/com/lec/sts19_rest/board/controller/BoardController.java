@@ -85,7 +85,12 @@ public class BoardController {
 		return "board/deleteOk";
 	}
 	
-
+	// REST 게시판
+	@RequestMapping(value="/rest")
+	public String rest() {
+		return "board/rest";
+	}
+	
 	
 	
 }
