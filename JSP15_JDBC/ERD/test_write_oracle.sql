@@ -37,15 +37,16 @@ SELECT GRANTED_ROLE FROM DBA_ROLE_PRIVS
 
 -- 기본데이터 작성
 INSERT INTO TEST_WRITE VALUES
-(TEST_WRITE_SEQ.nextval, '첫째글:방가요', '안녕하세요', '김희철', 0, '2017-03-02');
+(TEST_WRITE_SEQ.nextval, '동전을 몇개던져봐라', '나도하', '동전던지기달인', 0, '2017-03-02');
 INSERT INTO TEST_WRITE VALUES
-(TEST_WRITE_SEQ.nextval, '둘째글:헤헤헤','1111', '김수길', 0, '2017-03-02');
+(TEST_WRITE_SEQ.nextval, '반갑다','1111', '눈이내리면', 0, '2017-03-02');
 INSERT INTO TEST_WRITE VALUES
-(TEST_WRITE_SEQ.nextval, '세째글:힘내세요', '7394', '최진덕' , 0, '2017-08-12');
+(TEST_WRITE_SEQ.nextval, '초특급', '7394', '좌절' , 0, '2017-08-12');
 INSERT INTO TEST_WRITE VALUES
-(TEST_WRITE_SEQ.nextval, '네째글: ... ', '9090', '이혜원', 0, '2018-02-09');
+(TEST_WRITE_SEQ.nextval, '자세한 설명은 생략한다', '9090', '교강용', 0, '2018-02-09');
 INSERT INTO TEST_WRITE VALUES
-(TEST_WRITE_SEQ.nextval, '다섯째글: 게시판', '7531', '박수찬', 0, sysdate);
+(TEST_WRITE_SEQ.nextval, '전국구', '7531', '결호', 0, sysdate);
+
 
 
 --다량의 데이터 필요 

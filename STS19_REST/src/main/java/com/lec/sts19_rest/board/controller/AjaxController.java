@@ -31,7 +31,7 @@ public class AjaxController {
 	@RequestMapping("/board/view.ajax")
 	public AjaxWriteList view(HttpServletRequest request, HttpServletResponse response) {
 		new ViewCommand().execute(request, response);
-		return buildList(request);
+		return buildList(request); 
 	} // end 
 	
 	@RequestMapping(value = "/board/writeOk.ajax", method=RequestMethod.POST)
