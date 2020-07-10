@@ -28,7 +28,7 @@ public class AppTest {
 	
 	@Test
 	public void test2() {
-		assertEquals("Bye", app.getBye());
+		assertEquals("bye", app.getBye());
 		
 	}
 	

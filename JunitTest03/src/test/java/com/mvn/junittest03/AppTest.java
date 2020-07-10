@@ -10,12 +10,12 @@ import org.junit.Test;
 public class AppTest 
 {
 	
-	private App app;
+	private int [][] test=null;
 	
 	//실습1
     @Test
     public void test1() {
-
+    	
     	
     }
     

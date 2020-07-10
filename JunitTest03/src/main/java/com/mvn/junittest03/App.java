@@ -18,14 +18,7 @@ public class App
     public void sortArr(int [] arr) {
     	
     	
-    	int[] test = new int[5];
-    	
-    	Arrays.sort(test);
-    	for(int i=0; i<test.length; i++) {
- 
-    		System.out.println(test[i]);
-    		
-    	}
+    	Arrays.sort(arr);
 
     	
         
